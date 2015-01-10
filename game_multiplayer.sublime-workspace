@@ -1,0 +1,445 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"positi",
+				"positionIsAvailable( pos )	controller.js"
+			],
+			[
+				"initial",
+				"initialOffset	controller.js"
+			],
+			[
+				"handler",
+				"handlerIndex	core.js"
+			],
+			[
+				"handl",
+				"handlerIndex	core.js"
+			],
+			[
+				"addP",
+				"addParticle( x, y, attr )	main.js"
+			],
+			[
+				"hidd",
+				"hiddenWord"
+			],
+			[
+				"sym",
+				"symbolsToGuess"
+			],
+			[
+				"fail",
+				"failedGuessLimit"
+			],
+			[
+				"alp",
+				"alphabetEnd"
+			],
+			[
+				"prin",
+				"printAlphabet"
+			],
+			[
+				"print",
+				"printLetters"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Evented I/O for V8 javascript. [![Build Status](https://secure.travis-ci.org/joyent/node.png)](http://travis-ci.org/joyent/node)\n===\n\n### To build:\n\nPrerequisites (Unix only):\n\n    * GCC 4.2 or newer\n    * Python 2.6 or 2.7\n    * GNU Make 3.81 or newer\n    * libexecinfo (FreeBSD and OpenBSD only)\n\nUnix/Macintosh:\n\n    ./configure\n    make\n    make install\n\nIf your python binary is in a non-standard location or has a\nnon-standard name, run the following instead:\n\n    export PYTHON=/path/to/python\n    $PYTHON ./configure\n    make\n    make install\n\nWindows:\n\n    vcbuild.bat\n\nYou can download pre-built binaries for various operating systems from\n[http://nodejs.org/download/](http://nodejs.org/download/).  The Windows\nand OS X installers will prompt you for the location to install to.\nThe tarballs are self-contained; you can extract them to a local directory\nwith:\n\n    tar xzf /path/to/node-<version>-<platform>-<arch>.tar.gz\n\nOr system-wide with:\n\n    cd /usr/local && tar --strip-components 1 -xzf \\\n                         /path/to/node-<version>-<platform>-<arch>.tar.gz\n\n### To run the tests:\n\nUnix/Macintosh:\n\n    make test\n\nWindows:\n\n    vcbuild.bat test\n\n### To build the documentation:\n\n    make doc\n\n### To read the documentation:\n\n    man doc/node.1\n\nResources for Newcomers\n---\n  - [The Wiki](https://github.com/joyent/node/wiki)\n  - [nodejs.org](http://nodejs.org/)\n  - [how to install node.js and npm (node package manager)](http://www.joyent.com/blog/installing-node-and-npm/)\n  - [list of modules](https://github.com/joyent/node/wiki/modules)\n  - [searching the npm registry](http://npmjs.org/)\n  - [list of companies and projects using node](https://github.com/joyent/node/wiki/Projects,-Applications,-and-Companies-Using-Node)\n  - [node.js mailing list](http://groups.google.com/group/nodejs)\n  - irc chatroom, [#node.js on freenode.net](http://webchat.freenode.net?channels=node.js&uio=d4)\n  - [community](https://github.com/joyent/node/wiki/Community)\n  - [contributing](https://github.com/joyent/node/wiki/Contributing)\n  - [big list of all the helpful wiki pages](https://github.com/joyent/node/wiki/_pages)\n",
+			"file": "/home/vasil/.cache/.fr-guA4na/node-v0.10.35/README.md",
+			"file_size": 2139,
+			"file_write_time": 1419283352000000,
+			"settings":
+			{
+				"buffer_size": 2139,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 243.0,
+		"selected_items":
+		[
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"enablepa",
+				"Package Control: Enable Package"
+			],
+			[
+				"list pac",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"add ",
+				"Project: Add Folder"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"removepa",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/vasil/work/animation/js/app/core.js",
+		"/home/vasil/work/animation/index.html",
+		"/home/vasil/work/animation/js/app/keyboard.js",
+		"/home/vasil/work/animation/js/app/client.js",
+		"/home/vasil/work/animation/js/app/puppeteer.js",
+		"/home/vasil/work/animation/js/app/controller.js",
+		"/home/vasil/work/animation/css/styles.css",
+		"/home/vasil/work/animation/js/app/view.js",
+		"/home/vasil/work/animation/js/main.js",
+		"/home/vasil/work/animation/client.html",
+		"/home/vasil/work/animation/client.isml",
+		"/home/vasil/work/animation/js/app/grid.js",
+		"/home/vasil/work/animation/js/app/loop.js",
+		"/home/vasil/work/animation/js/app/game.js",
+		"/home/vasil/.cache/.fr-a9vZTb/Richard_Bah_-_Most_prez_vechnostta_-1130-b.txt",
+		"/home/vasil/work/python/bisection.py",
+		"/home/vasil/work/python/equation.py",
+		"/media/vasil/Data/videos/Edge Of Tomorrow 2014 HDRIP CHNSUB XVID AC3 ACAB/Edge.of.Tomorrow.2014.CHSSUB.WEB-DL.x264.AAC-lwn.srt",
+		"/media/vasil/Data/videos/Edge Of Tomorrow 2014 HDRIP CHNSUB XVID AC3 ACAB/Edge of Tomorrow 2014 READNFO 480p HDRip XVID AC3-NoGroup.srt",
+		"/home/vasil/work/cpp/inheritance/CFig.h",
+		"/home/vasil/work/cpp/cows_bulls/main.cpp",
+		"/home/vasil/work/cpp/hangman/fruits.txt",
+		"/home/vasil/work/cpp/inheritance/inherit.cpp",
+		"/home/vasil/work/cpp/hangman/hangman.cpp",
+		"/home/vasil/work/cpp/hangman/CTemplate.h",
+		"/home/vasil/work/cpp/hangman/CCommand.h",
+		"/media/vasil/Data/ownCloud/RADIO.m3u",
+		"/home/vasil/Downloads/cpp/CFig.cpp",
+		"/home/vasil/Downloads/cpp/CFig.h",
+		"/home/vasil/Downloads/cpp/CTriangle.h",
+		"/home/vasil/Downloads/cpp/CRect.h",
+		"/home/vasil/Downloads/cpp/CTriangle.cpp",
+		"/home/vasil/Downloads/cpp/CRect.cpp",
+		"/home/vasil/Downloads/cpp/Figures.cbp",
+		"/home/vasil/Downloads/cpp/fruits.txt",
+		"/home/vasil/Downloads/cpp/inherit.cpp",
+		"/home/vasil/work/cows_bulls/main.cpp",
+		"/home/vasil/.cache/.fr-NvPQ3W/pulse-linux-amd64-0.1.0/README.txt",
+		"/home/vasil/.cache/.fr-KMGSxL/pulse-linux-amd64-0.1.0/README.txt",
+		"/usr/share/applications/sublime.desktop",
+		"/usr/share/applications/defaults.list"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"cellSize",
+			"21",
+			"cellSize+1)",
+			"settings.grid.cellSize",
+			"stage",
+			"cellSize",
+			"initialOffset",
+			"playerSpeed",
+			"istake",
+			"grid",
+			"$",
+			"occupant",
+			"move.message",
+			"player",
+			"movePlayer",
+			"players",
+			"newPosition",
+			"player.position",
+			"x",
+			";\n",
+			".75",
+			"keyboard.js:22",
+			"event",
+			"name",
+			"onCommand",
+			"controller",
+			"event",
+			"handler",
+			"on",
+			"11px",
+			"\n#",
+			"#",
+			";\n",
+			"point",
+			".",
+			"position",
+			"point.direction",
+			"speed",
+			"puppeteer.node",
+			"puppeteer.particleAttributes",
+			"puppeteer.shadows",
+			"puppeteer.node",
+			" ",
+			"x",
+			"&",
+			"embedCode",
+			"true&embedCode",
+			"&",
+			"wmv",
+			"<>",
+			"'",
+			">\n",
+			"turn",
+			"alphabet",
+			"letters",
+			"isContainedInVector",
+			"isUsed",
+			"alphabet",
+			"eraseFromAlphabet",
+			"dict",
+			"&letters",
+			" &letters",
+			"&letters",
+			"getHistory",
+			"printHistoryLog",
+			"letters",
+			"c",
+			"\"",
+			"gedit.desktop"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/vasil/.cache/.fr-guA4na/node-v0.10.35/README.md",
+					"settings":
+					{
+						"buffer_size": 2139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								955,
+								955
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 159.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ind",
+				"index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,64 @@
+body {
+    background: #333;
+    text-align: center;
+}
+
+button {
+    width: 90px;
+    height: 90px;
+    margin: 0 0 4px;
+    border: 1px solid;
+    border-color: #fff #000 #000 #fff;
+    background: #eee;
+    color: #666;
+    font-weight: bold;
+    -webkit-appearance: none;
+}
+
+button:active {
+    background: #afa;
+    color: #000;
+}
+
+.keys {
+    display: none;
+    margin: 20px 0;
+}
+
+.joined .keys {
+    display: block;
+}
+
+.login {
+    margin: 20px;
+}
+
+.login label {
+    display: block;
+    color: #aaa;
+    font-family: sans-serif;
+    margin: 0 0 10px;
+}
+
+.login .name {
+    padding: 10px;
+    border: 1px solid #000;
+    background: #eee;
+    color: #666;
+}
+
+.login .submit {
+    display: block;
+    width: 100px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #000;
+    border-color: #fff #000 #000 #fff;
+    color: #222;
+    font-weight: bold;
+    -webkit-appearance: none;
+}
+
+.joined .login {
+    display: none;
+}

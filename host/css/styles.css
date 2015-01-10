@@ -1,0 +1,44 @@
+html, body {
+    /*height: 100%;*/
+    background: #333;
+    font-family: sans-serif;
+}
+
+.stage {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+
+    background-image:
+        -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(0,0,0,.5)), color-stop(0.01, transparent), to(transparent)),
+        -webkit-gradient(linear, 0 0, 100% 0, color-stop(0, rgba(0,0,0,.5)), color-stop(0.01, transparent), to(transparent));
+    background-image:
+        -webkit-linear-gradient(rgba(0,0,0,.5) 0, transparent 1px),
+        -webkit-linear-gradient(0deg, rgba(0,0,0,.5) 0, transparent 1px);
+    background-image:
+        -moz-linear-gradient(rgba(0,0,0,.5) 0, transparent 1px),
+        -moz-linear-gradient(0deg, rgba(0,0,0,.5) 0, transparent 1px);
+    background-color: #eee;
+}
+
+.puppeteer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .2s ease-out;
+}
+
+.dashboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background: rgba(255,255,255,.8);
+    border: 1px solid #000;
+}
+
+.dashboard .players {
+    padding:0 0 0 20px;
+    margin:10px 0;
+    list-style-type: square;
+}
