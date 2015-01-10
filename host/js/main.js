@@ -72,7 +72,7 @@ define([ 'jquery', 'socket.io', 'app/core', 'app/loop', 'app/client', 'app/contr
     });
 
     app.io = {};
-    app.io.socket = io.connect('localhost');
+    app.io.socket = io.connect('/');
 
     app.io.socket.on( 'welcome', function ( hostId ) {
         var joinUrl = window.location.href+'join?host='+hostId;
