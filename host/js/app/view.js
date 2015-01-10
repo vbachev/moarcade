@@ -1,4 +1,4 @@
-define([ 'app/puppeteer' ], function ( Puppeteer ) {
+define([ 'app/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
     'use strict';
 
     var View = function( config ){
@@ -50,19 +50,31 @@ define([ 'app/puppeteer' ], function ( Puppeteer ) {
                 puppeteer.render();
 
 
-                playersLeft.forEach(function( id ){
+                playersLeft.forEach( function ( id ) {
                     $('.players').find('.player-'+id).remove();
                 });
                 playersJoined=[];
                 playersLeft=[];
             },
 
-            addPlayer : function ( data ){
+            addPlayer : function ( data ) {
                 playersJoined.push(data.id);
             },
 
-            removePlayer : function ( data ){
+            removePlayer : function ( data ) {
                 playersLeft.push(data.id);
+            },
+
+            setURL : function ( data ) {
+                $('.joinMessage').html('Join game at <br><a href="'+data.url+'" target="_blank">'+data.url+'</a>');
+
+                new QRCode( $('.qrCode')[0], {
+                    text: data.url,
+                    width: 180,
+                    height: 180,
+                    colorDark : "#333",
+                    colorLight : "#eee"
+                });
             }
         };
     };

@@ -5,7 +5,7 @@ requirejs.config({
     }
 });
 
-define([ 'jquery', 'socket.io', 'app/core', 'app/loop', 'app/client', 'app/controller', 'app/view' ], function( $, io, Core, Loop, Client, Controller, View ){
+define([ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/client', 'app/controller', 'app/view' ], function( $, Host, Core, Loop, Client, Controller, View ){
     'use strict';
 
     var stageConfig = {
@@ -23,20 +23,21 @@ define([ 'jquery', 'socket.io', 'app/core', 'app/loop', 'app/client', 'app/contr
     app.off = app.core.off;
     app.trigger = app.core.trigger;
 
+    app.host = new Host();
     app.loop = new Loop();
     app.controller = new Controller( stageConfig );
     app.view = new View( stageConfig );
 
     app.on( 'start', function(){
+        app.host.initialize( function ( data ) {
+            app.trigger( 'command', data );
+        });
+
         app.view.initialize();
 
         app.loop.start( function(){
             app.trigger( 'loop' );
         });
-
-        // MOCKING
-        // app.client = new Client();
-        // app.client.initialize();
     });
 
     app.on( 'stop', function(){
@@ -59,39 +60,19 @@ define([ 'jquery', 'socket.io', 'app/core', 'app/loop', 'app/client', 'app/contr
             case 'left':
                 app.controller.addMove( data );
                 break;
+            case 'host_ready':
+                app.view.setURL( data );
+                break;
         }
     });
 
     app.on( 'loop', function () {
         app.controller.playMoves();
-        app.view.render( app.controller.getDTOs());
+        app.view.render( app.controller.getDTO() );
     });
 
     $(function(){
         app.trigger( 'start' );
-    });
-
-    app.io = {};
-    app.io.socket = io.connect('/');
-
-    app.io.socket.on( 'welcome', function ( hostId ) {
-        var joinUrl = window.location.href+'join?host='+hostId;
-        $('.joinMessage').append('Join game <a href="'+joinUrl+'" target="_blank">here</a> or at '+joinUrl );
-        app.io.socket.emit('host_ready');
-    });
-
-    app.io.socket.on( 'player_joined', function ( data ) {
-        data.message = 'player_joined';
-        app.trigger( 'command', data );
-    });
-
-    app.io.socket.on( 'player_left', function ( data ) {
-        data.message = 'player_left';
-        app.trigger( 'command', data );
-    });
-
-    app.io.socket.on( 'command', function ( data ) {
-        app.trigger( 'command', data );
     });
 
 });

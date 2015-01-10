@@ -140,7 +140,7 @@ define([ 'jquery' ], function ( $ ) {
                 moves = [];
             },
 
-            getDTOs : function(){
+            getDTO : function(){
                 return agents;
             }
         }
