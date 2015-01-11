@@ -9,20 +9,29 @@ app.use( '/join', express.static( __dirname + '/client' ));
 
 var idIndex = 0;
 
-io.on('connection', function(socket){
+// start listening
+http.listen( app.get('port'), function(){
+	console.log('listening on *:'+app.get('port'));
+});
+
+// when a new socket is created
+io.on( 'connection', function ( socket ) {
 	var clientId = ++idIndex;
 	var roomId = 0;
-	console.log('connection: '+clientId);
 
+	// notify client of its ID
 	socket.emit( 'welcome', clientId );
+	console.log('connection: '+clientId+socket.conn.transport.type);
 
+	// create room when host is initialized
 	socket.on('host_ready', function () {
 		console.log('host creates room '+clientId);
 		socket.join( clientId );
 	});
 
+	// join host room when client is initialized
 	socket.on('connected', function( data ){
-		console.log('a user connected: '+data.id+data.name);
+		console.log('player connected: '+data.id+data.name);
 
 		roomId = data.room;
 		console.log('client joins room '+roomId);
@@ -31,6 +40,7 @@ io.on('connection', function(socket){
 		socket.broadcast.to( roomId ).emit('player_joined', data);
 	});
 
+	// when a player is leaving
 	socket.on('disconnect', function(){
 		console.log('user disconnected: '+clientId);
 		socket.broadcast.to( roomId ).emit('player_left', { id : clientId });
@@ -64,8 +74,4 @@ io.on('connection', function(socket){
 		});
 	});
 
-});
-
-http.listen(app.get('port'), function(){
-	console.log('listening on *:'+app.get('port'));
 });

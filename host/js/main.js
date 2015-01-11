@@ -5,7 +5,10 @@ requirejs.config({
     }
 });
 
-define([ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/client', 'app/controller', 'app/view' ], function( $, Host, Core, Loop, Client, Controller, View ){
+define(
+    [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
+    // [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
+    function( $, Host, Core, Loop, Controller, View ){
     'use strict';
 
     var stageConfig = {
@@ -13,7 +16,8 @@ define([ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/client', 'app/contro
             width : 20,
             height : 20,
             cellSize : 20
-        }
+        },
+        randomCrates : 0
     };
 
     window.app = {};
@@ -67,7 +71,7 @@ define([ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/client', 'app/contro
     });
 
     app.on( 'loop', function () {
-        app.controller.playMoves();
+        app.controller.play();
         app.view.render( app.controller.getDTO() );
     });
 

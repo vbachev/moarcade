@@ -42,17 +42,26 @@ define([ 'app/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
                     puppeteer.addParticle( item.position.x * cellSize, item.position.y * cellSize, { color : item.color } );
 
                     if( item.type=='player' ){
+
+                        // print tail
+                        item.tail.forEach( function ( tailItem ) {
+                            puppeteer.addParticle( tailItem.x * cellSize, tailItem.y * cellSize, { color : item.color } );
+                        });
+
+                        // print new joiner text
                         if( playersJoined.indexOf(item.id) > -1 ){
-                            $('.players').append( $('<li class="player-'+item.id+'" style="color:'+item.color+'">'+(item.name || 'Anonymous')+'</li>'));
+                            $('.players').append( $('<li class="player-'+item.id+'" style="color:'+item.color+'">'+(item.name || 'Anonymous '+item.id)+'</li>'));
                         }
                     }
                 }
                 puppeteer.render();
 
-
+                // remove player text
                 playersLeft.forEach( function ( id ) {
                     $('.players').find('.player-'+id).remove();
                 });
+
+                // empty arrays
                 playersJoined=[];
                 playersLeft=[];
             },

@@ -4,6 +4,7 @@ define([ 'jquery' ], function ( $ ) {
     var Controller = function ( config ) {
 
         var agents = {};
+        var idIndex= 0;
         var moves = [];
 
         var settings = {
@@ -46,6 +47,13 @@ define([ 'jquery' ], function ( $ ) {
                 if( agent.position.x == pos.x && agent.position.y == pos.y ){
                     return id;
                 }
+                if( agent.tail && agent.tail.length ){
+                    for( var i = 0, l = agent.tail.length; i < l; i++ ){
+                        if( agent.tail[i].x == pos.x && agent.tail[i].y == pos.y ){
+                            return id;
+                        }
+                    }
+                }
             }
             return -1;
         }
@@ -76,21 +84,46 @@ define([ 'jquery' ], function ( $ ) {
                 return false;
             }
 
+            var eating = false;
             var occupantId = positionIsTaken( newPosition );
             if( occupantId != -1 && agents[ occupantId ] ){
-                // if( agents[ occupantId ].type == 'crate' && !pushed ){
-                    var occupantMoveResult = moveAgent( agents[ occupantId ], direction, true );
-                    if( !occupantMoveResult ){
-                        return false;
-                    }
-                // } else {
-                //     return false;
-                // }
+                if( agents[ occupantId ].type == 'crate' && !pushed ){
+                    // var occupantMoveResult = moveAgent( agents[ occupantId ], direction, true );
+                    // if( !occupantMoveResult ){
+                    //     return false;
+                    // }
+                    eating = true;
+                    delete agents[occupantId];
+                    addCrate();
+                } else {
+                    return false;
+                }
+            }
+
+            agent.tail.unshift( agent.position );
+            if( !eating ){
+                agent.tail.pop();
             }
 
             agent.position = newPosition;
 
             return true;
+        }
+
+        function addCrate (){
+            var crateId = 'crate'+(++idIndex);
+            agents[ crateId ] = {
+                id : crateId,
+                type : 'crate',
+                color : '#333',
+                position : getRandomPosition()
+            };
+        }
+
+        if( settings.randomCrates ){
+            for( var i =0, l = settings.randomCrates; i < l; i++ ){
+                addCrate();
+            }
         }
 
         return {
@@ -106,12 +139,14 @@ define([ 'jquery' ], function ( $ ) {
                     id : data.id,
                     type : 'player',
                     name : data.name,
-                    position : getRandomPosition()
+                    color : data.color || '#' + Math.floor(Math.random()*4096).toString(16),
+                    position : getRandomPosition(),
+                    tail : []
                 };
 
-                newPlayer.color = data.color || '#' + Math.floor(Math.random()*4096).toString(16);
-
                 agents[ data.id ] = newPlayer;
+
+                addCrate();
             },
 
             removePlayer : function ( data ) {
@@ -130,7 +165,7 @@ define([ 'jquery' ], function ( $ ) {
                 moves.push( data );
             },
 
-            playMoves : function(){
+            play : function(){
                 moves.forEach( function ( move ) {
                     if( move.id && agents[ move.id ] ){
                         var player = agents[ move.id ];

@@ -6,9 +6,9 @@ body {
 button {
     width: 90px;
     height: 90px;
-    margin: 0 0 4px;
-    border: 1px solid;
-    border-color: #fff #000 #000 #fff;
+    margin: 0 3px 10px;
+    border: 10px solid;
+    border-color: #fff #aaa #888 #ddd;
     background: #eee;
     color: #666;
     font-weight: bold;

@@ -4,17 +4,23 @@ define([ 'app/keyboard' ], function ( Keyboard ) {
     var Client = function ( config ) {
 
         return {
-            initialize : function () {
+            initialize : function ( callback ) {
                 setTimeout( function(){
 
-                    app.trigger( 'command', {
-                        message : 'connection',
+                    callback({
+                        message : 'host_ready',
+                        id : 1,
+                        url : 'mock connection'
+                    });
+
+                    callback({
+                        message : 'player_joined',
                         id : 42,
                         name : 'vasil'
                     });
 
-                    app.trigger( 'command', {
-                        message : 'connection',
+                    callback({
+                        message : 'player_joined',
                         id : 41,
                         name : 'fanka',
                         color: 'green'
@@ -34,13 +40,13 @@ define([ 'app/keyboard' ], function ( Keyboard ) {
                             keyName = p1Keys[ p2Keys.indexOf( keyName )];
                         }
 
-                        app.trigger( 'command', {
+                        callback({
                             message : keyName,
                             id : commandId
                         });
                     });
 
-                }, 2000 );
+                }, 1000 );
             }
         }
     };
