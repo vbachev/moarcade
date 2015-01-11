@@ -6,8 +6,8 @@ requirejs.config({
 });
 
 define(
-    [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
-    // [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
+    // [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
+    [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
     function( $, Host, Core, Loop, Controller, View ){
     'use strict';
 
@@ -16,8 +16,7 @@ define(
             width : 20,
             height : 20,
             cellSize : 20
-        },
-        randomCrates : 0
+        }
     };
 
     window.app = {};

@@ -42,7 +42,7 @@
 				socket.emit( 'connected', {
 					id : clientId,
 					name : document.getElementById('name').value,
-					room : window.location.href.split('host=')[1].split('&')[0]
+					room : window.location.href.split('host=')[1]
 				});
 
 				document.body.className = 'joined';

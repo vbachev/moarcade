@@ -45,7 +45,7 @@ define([ 'app/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
 
                         // print tail
                         item.tail.forEach( function ( tailItem ) {
-                            puppeteer.addParticle( tailItem.x * cellSize, tailItem.y * cellSize, { color : item.color } );
+                            puppeteer.addParticle( tailItem.x * cellSize, tailItem.y * cellSize, { color : item.color, size : 6 } );
                         });
 
                         // print new joiner text

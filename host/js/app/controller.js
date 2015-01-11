@@ -139,7 +139,7 @@ define([ 'jquery' ], function ( $ ) {
                     id : data.id,
                     type : 'player',
                     name : data.name,
-                    color : data.color || '#' + Math.floor(Math.random()*4096).toString(16),
+                    color : data.color || 'hsl(' + (Math.floor(Math.random()*18)*20) + ',100%,30%)',
                     position : getRandomPosition(),
                     tail : []
                 };

@@ -8,6 +8,7 @@ app.use( express.static( __dirname + '/host' ));
 app.use( '/join', express.static( __dirname + '/client' ));
 
 var idIndex = 0;
+var latestHostId = 0;
 
 // start listening
 http.listen( app.get('port'), function(){
@@ -21,19 +22,20 @@ io.on( 'connection', function ( socket ) {
 
 	// notify client of its ID
 	socket.emit( 'welcome', clientId );
-	console.log('connection: '+clientId+socket.conn.transport.type);
+	console.log('connection: '+clientId);
 
 	// create room when host is initialized
 	socket.on('host_ready', function () {
 		console.log('host creates room '+clientId);
 		socket.join( clientId );
+		latestHostId = clientId;
 	});
 
 	// join host room when client is initialized
 	socket.on('connected', function( data ){
 		console.log('player connected: '+data.id+data.name);
 
-		roomId = data.room;
+		roomId = data.room || latestHostId;
 		console.log('client joins room '+roomId);
 		socket.join( roomId );
 
