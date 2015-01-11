@@ -6,8 +6,8 @@ requirejs.config({
 });
 
 define(
-    // [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
-    [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
+    [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
+    // [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ], // mocking
     function( $, Host, Core, Loop, Controller, View ){
     'use strict';
 
