@@ -32,7 +32,7 @@ io.on( 'connection', function ( socket ) {
 	});
 
 	// join host room when client is initialized
-	socket.on('connected', function( data ){
+	socket.on('player_ready', function( data ){
 		console.log('player connected: '+data.id+data.name);
 
 		roomId = data.room || latestHostId;
@@ -72,6 +72,13 @@ io.on( 'connection', function ( socket ) {
 	socket.on( 'left', function ( id ) {
 		socket.broadcast.to( roomId ).emit( 'command', {
 			message : 'left',
+			id : id
+		});
+	});
+
+	socket.on( 'shake', function ( id ) {
+		socket.broadcast.to( roomId ).emit( 'command', {
+			message : 'shake',
 			id : id
 		});
 	});

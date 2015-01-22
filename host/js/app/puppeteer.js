@@ -1,5 +1,4 @@
 define([ 'jquery' ], function ( $ ) {
-    'use strict';
 
     var Puppeteer = function ( config ) {
 
@@ -28,12 +27,12 @@ define([ 'jquery' ], function ( $ ) {
             var attributes = $.extend({}, settings.particleAttributes, attr );
 
             shadows.push([
-                x + 'px',
-                y + 'px',
-                attributes.blur + 'px',
-                attributes.size + 'px',
+                x,'px ',
+                y,'px ',
+                attributes.blur,'px ',
+                attributes.size,'px ',
                 attributes.color
-            ].join(' '));
+            ].join(''));
         }
 
         function addParticles ( points ) {

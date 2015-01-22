@@ -6,15 +6,14 @@ requirejs.config({
 });
 
 define(
-    [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
-    // [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ], // mocking
+    [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/arenaController', 'app/arenaView' ],
+    // [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/arenaController', 'app/arenaView' ], // mocking
     function( $, Host, Core, Loop, Controller, View ){
 
     var stageConfig = {
-        grid : {
-            width : 20,
-            height : 20,
-            cellSize : 20
+        stage : {
+            width : 600,
+            height : 600
         }
     };
 
@@ -38,7 +37,7 @@ define(
         app.view.initialize();
 
         app.loop.start( function ( dt ) {
-            app.trigger( 'loop' );
+            app.trigger( 'loop', dt );
         });
     });
 
@@ -71,8 +70,8 @@ define(
         }
     });
 
-    app.on( 'loop', function () {
-        app.controller.play();
+    app.on( 'loop', function ( dt ) {
+        app.controller.play( dt );
         app.view.render( app.controller.getDTO() );
     });
 

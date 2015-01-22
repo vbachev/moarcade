@@ -13,11 +13,26 @@ button {
     color: #666;
     font-weight: bold;
     -webkit-appearance: none;
+    outline: 0 none;
+
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+button:hover {
+    opacity: .8;
+    color: #000;
 }
 
 button:active {
-    background: #afa;
-    color: #000;
+    position: relative;
+    top: 1px;
+    opacity: .5;
 }
 
 .keys {

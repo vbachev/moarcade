@@ -1,5 +1,4 @@
 define([ 'socket.io' ], function ( io ) {
-    'use strict';
 
     var Host = function ( config ){
 
@@ -12,7 +11,7 @@ define([ 'socket.io' ], function ( io ) {
                 socket = io.connect('/');
 
                 socket.on( 'welcome', function ( hostId ) {
-                    hostURL = window.location.href + 'join?host=' + hostId;
+                    hostURL = window.location.origin + '/join?host=' + hostId;
 
                     socket.emit('host_ready');
                     callback({

@@ -7,46 +7,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
 
 		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/shake.js"></script>
+		<script src="js/client.js"></script>
 	</head>
 	<body>
-
 		<div class="login">
 			<label for="name">What is your name?</label>
-			<input type="text" name="name" id="name" class="name">
-			<input type="button" class="submit" name="submit" value="Join" onclick="join()">
+			<input id="name" type="text" name="name" class="name">
+			<input id="joinButton" type="button" class="submit" name="submit" value="Join">
 		</div>
 
 		<div class="keys">
-			<button class="up" onclick="socket.emit('up',clientId)">UP</button>
+			<button id="upButton" class="up">UP</button>
 			<br>
-			<button class="left" onclick="socket.emit('left',clientId)">LEFT</button>
-			<button class="down" onclick="socket.emit('down',clientId)">DOWN</button>
-			<button class="right" onclick="socket.emit('right',clientId)">RIGHT</button>
+			<button id="leftButton" class="left">LEFT</button>
+			<button id="downButton" class="down">DOWN</button>
+			<button id="rightButton" class="right">RIGHT</button>
 			<br>
 		</div>
-
-		<script src="/socket.io/socket.io.js"></script>
-		<script>
-			var socket = io.connect('/');
-			var clientId = 0;
-
-			socket.on('welcome', function (data) {
-				clientId = data;
-			});
-
-			function join( name ){
-				if( !clientId ){
-					return;
-				}
-
-				socket.emit( 'connected', {
-					id : clientId,
-					name : document.getElementById('name').value,
-					room : window.location.href.split('host=')[1]
-				});
-
-				document.body.className = 'joined';
-			}
-		</script>
 	</body>
 </html>

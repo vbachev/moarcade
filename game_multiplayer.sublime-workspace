@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"right",
+				"BufferPool(initialSize, growStrategy, shrinkStrategy)	BufferPool.js"
+			],
+			[
+				"host",
+				"hostURL	connection.js"
+			],
+			[
+				"players",
+				"playersLeft	view.js"
+			],
+			[
+				"position",
+				"positionIsTaken( pos )	controller.js"
+			],
+			[
 				"positi",
 				"positionIsAvailable( pos )	controller.js"
 			],
@@ -52,13 +68,82 @@
 	"buffers":
 	[
 		{
-			"contents": "Evented I/O for V8 javascript. [![Build Status](https://secure.travis-ci.org/joyent/node.png)](http://travis-ci.org/joyent/node)\n===\n\n### To build:\n\nPrerequisites (Unix only):\n\n    * GCC 4.2 or newer\n    * Python 2.6 or 2.7\n    * GNU Make 3.81 or newer\n    * libexecinfo (FreeBSD and OpenBSD only)\n\nUnix/Macintosh:\n\n    ./configure\n    make\n    make install\n\nIf your python binary is in a non-standard location or has a\nnon-standard name, run the following instead:\n\n    export PYTHON=/path/to/python\n    $PYTHON ./configure\n    make\n    make install\n\nWindows:\n\n    vcbuild.bat\n\nYou can download pre-built binaries for various operating systems from\n[http://nodejs.org/download/](http://nodejs.org/download/).  The Windows\nand OS X installers will prompt you for the location to install to.\nThe tarballs are self-contained; you can extract them to a local directory\nwith:\n\n    tar xzf /path/to/node-<version>-<platform>-<arch>.tar.gz\n\nOr system-wide with:\n\n    cd /usr/local && tar --strip-components 1 -xzf \\\n                         /path/to/node-<version>-<platform>-<arch>.tar.gz\n\n### To run the tests:\n\nUnix/Macintosh:\n\n    make test\n\nWindows:\n\n    vcbuild.bat test\n\n### To build the documentation:\n\n    make doc\n\n### To read the documentation:\n\n    man doc/node.1\n\nResources for Newcomers\n---\n  - [The Wiki](https://github.com/joyent/node/wiki)\n  - [nodejs.org](http://nodejs.org/)\n  - [how to install node.js and npm (node package manager)](http://www.joyent.com/blog/installing-node-and-npm/)\n  - [list of modules](https://github.com/joyent/node/wiki/modules)\n  - [searching the npm registry](http://npmjs.org/)\n  - [list of companies and projects using node](https://github.com/joyent/node/wiki/Projects,-Applications,-and-Companies-Using-Node)\n  - [node.js mailing list](http://groups.google.com/group/nodejs)\n  - irc chatroom, [#node.js on freenode.net](http://webchat.freenode.net?channels=node.js&uio=d4)\n  - [community](https://github.com/joyent/node/wiki/Community)\n  - [contributing](https://github.com/joyent/node/wiki/Contributing)\n  - [big list of all the helpful wiki pages](https://github.com/joyent/node/wiki/_pages)\n",
-			"file": "/home/vasil/.cache/.fr-guA4na/node-v0.10.35/README.md",
-			"file_size": 2139,
-			"file_write_time": 1419283352000000,
+			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 2139,
+				"buffer_size": 2035,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "host/js/app/arenaView.js",
+			"settings":
+			{
+				"buffer_size": 2051,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "host/js/app/vector.js",
+			"settings":
+			{
+				"buffer_size": 2378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vasil/work/game_mutant_smasher/js/models/Agent.js",
+			"settings":
+			{
+				"buffer_size": 4704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vasil/work/game_mutant_smasher/js/models/Particle.js",
+			"settings":
+			{
+				"buffer_size": 853,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vasil/work/game_mutant_smasher/js/models/Impact.js",
+			"settings":
+			{
+				"buffer_size": 1532,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vasil/work/game_mutant_smasher/js/World.js",
+			"settings":
+			{
+				"buffer_size": 3737,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "host/js/arena.js",
+			"settings":
+			{
+				"buffer_size": 2055,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "host/js/main.js",
+			"settings":
+			{
+				"buffer_size": 2045,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "host/js/app/puppeteer.js",
+			"settings":
+			{
+				"buffer_size": 1305,
 				"line_ending": "Unix"
 			}
 		}
@@ -66,9 +151,73 @@
 	"build_system": "Packages/C++/C++.sublime-build",
 	"command_palette":
 	{
-		"height": 243.0,
+		"height": 96.0,
 		"selected_items":
 		[
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"side",
+				"Side Bar: Refresh"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"minif",
+				"Minify Javascript"
+			],
+			[
+				"mini",
+				"Minify Javascript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"removepa",
+				"Package Control: Remove Package"
+			],
+			[
+				"listpa",
+				"Package Control: List Packages"
+			],
+			[
+				"minify",
+				"Minify::Default File Settings"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"trai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"indentat",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"convertta",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"convert",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"inden",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"new",
+				"ANF: New File"
+			],
 			[
 				"rename",
 				"File: Rename"
@@ -102,10 +251,6 @@
 				"Package Control: List Packages"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"add ",
 				"Project: Add Folder"
 			],
@@ -116,10 +261,6 @@
 			[
 				"build",
 				"Build: Build"
-			],
-			[
-				"removepa",
-				"Package Control: Remove Package"
 			],
 			[
 				"remove pa",
@@ -147,6 +288,58 @@
 	},
 	"file_history":
 	[
+		"/home/vasil/work/game_multiplayer/client/alexgibson-shake.js-87ac48d/shake.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/puppeteer.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/loop.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/keyboard.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/host.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/core.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/controller.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/client.js",
+		"/home/vasil/work/game_multiplayer/host/js/app/view.js",
+		"/home/vasil/work/game_multiplayer/host/arena.html",
+		"/home/vasil/work/game_multiplayer/host/js/main.js",
+		"/home/vasil/work/game_multiplayer/host/index.html",
+		"/home/vasil/work/game_multiplayer/host/css/arena.css",
+		"/home/vasil/work/game_multiplayer/host/css/styles.css",
+		"/home/vasil/work/game_mutant_smasher/js/models/Vector.js",
+		"/home/vasil/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/vasil/work/game_mutant_smasher/js/models/Egg.js",
+		"/home/vasil/work/game_multiplayer/client/js/client.js",
+		"/home/vasil/work/game_mutant_smasher/js/models/Agent.js",
+		"/home/vasil/work/game_multiplayer/Game modes",
+		"/home/vasil/work/game_multiplayer/client/index.html",
+		"/home/vasil/work/game_multiplayer/client/css/styles.css",
+		"/home/vasil/work/game_multiplayer/client/js/shake.js",
+		"/home/vasil/.config/sublime-text-2/Packages/Minify/README.md",
+		"/home/vasil/.config/sublime-text-2/Packages/User/Minify.sublime-settings",
+		"/home/vasil/.config/sublime-text-2/Packages/Minify/Minify.sublime-settings",
+		"/home/vasil/Downloads/Tree.cpp",
+		"/home/vasil/work/game_multiplayer/host/js/app/snake.js",
+		"/home/vasil/.cache/.fr-zGXpcu/E_Multiban/all_E_Multi.txt",
+		"/home/vasil/.cache/.fr-g75pYO/E_Multiban/emulti01h.hsb",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/node_modules/socket.io-client/lib/manager.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/node_modules/socket.io-client/lib/on.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/node_modules/socket.io-client/lib/url.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/node_modules/socket.io-client/lib/socket.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/node_modules/socket.io-client/lib/index.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/node_modules/socket.io-client/socket.io.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/lib/namespace.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/lib/index.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/lib/socket.js",
+		"/home/vasil/work/game_multiplayer/node_modules/socket.io/lib/client.js",
+		"/home/vasil/work/heroku/node-js-getting-started/index.js",
+		"/home/vasil/work/game_mutant_smasher/js/Tools.js",
+		"/home/vasil/work/game_multiplayer/Procfile",
+		"/home/vasil/work/game_multiplayer/host/js/app/connection.js",
+		"/home/vasil/work/game_mutant_smasher/.gitignore",
+		"/home/vasil/work/game_multiplayer/.gitignore",
+		"/home/vasil/work/game_mutant_smasher/js/World.js",
+		"/home/vasil/work/node_server/staticService.js",
+		"/home/vasil/work/game_multiplayer/server/index.js",
+		"/home/vasil/work/game_multiplayer/server/index.html",
+		"/home/vasil/work/game_multiplayer/server/package.json",
+		"/home/vasil/.cache/.fr-guA4na/node-v0.10.35/README.md",
 		"/home/vasil/work/animation/js/app/core.js",
 		"/home/vasil/work/animation/index.html",
 		"/home/vasil/work/animation/js/app/keyboard.js",
@@ -195,9 +388,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -205,6 +399,122 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" * cellSize",
+			"* cellSize",
+			"cellSize",
+			" * cellSize",
+			"* cellSize",
+			"cellSize",
+			"grid",
+			"gridst",
+			"grid",
+			"    'use strict';\\n",
+			"qr",
+			"requirejs",
+			")s{",
+			"\\)\\n\\s+\\{",
+			"\n  ",
+			";\n",
+			"this",
+			"return",
+			";\n",
+			"this",
+			"ctrl+d",
+			"}\n",
+			";\n",
+			"};\n",
+			"\n  ",
+			";\n",
+			"this",
+			"};\n",
+			"\n    ",
+			" )\n  {\n",
+			")\n  {",
+			"\n    ",
+			" )\n  {\n",
+			")\n  {",
+			")\n{",
+			"randomize",
+			"console.warn(",
+			"Tools.log",
+			"Tools.isVector(",
+			"Tools.isNumber(",
+			"a_",
+			"Tools",
+			" });",
+			"\n    ",
+			"    });\n",
+			"});",
+			"    });\n",
+			"});",
+			"onClick",
+			"clickEvent",
+			"up",
+			"join",
+			"socket",
+			"onclick",
+			"class=",
+			"button",
+			"moveAgent",
+			"addmove",
+			"left",
+			"чо",
+			"панчо",
+			"п",
+			"0,0,0,.5",
+			".dead",
+			"moveAgent",
+			"addMo",
+			"addmo",
+			"crate",
+			"remove",
+			"position",
+			"item.position",
+			"puppeteer",
+			"anon",
+			"crate",
+			"client",
+			"util.",
+			"util.d",
+			", 100",
+			"settimeout",
+			", 100);",
+			"settimeout",
+			"100",
+			", 100);",
+			"64",
+			"joinUrl",
+			"app.trigger( 'command'",
+			"hostmessage",
+			"connection",
+			"Connection",
+			"connection",
+			"app.io",
+			"80",
+			"socket.broadcast.",
+			"item",
+			"data",
+			"dashboard",
+			"div",
+			" - 1",
+			"round",
+			"random",
+			"3000",
+			"player_left",
+			"removePlayer",
+			"command",
+			"player_joined",
+			"joined",
+			"disconnected",
+			"connected",
+			"data",
+			",emit",
+			"up",
+			"data",
+			"clientnum",
+			"clientId",
+			"thisClientId",
+			"use",
 			"cellSize",
 			"21",
 			"cellSize+1)",
@@ -216,71 +526,16 @@
 			"istake",
 			"grid",
 			"$",
-			"occupant",
-			"move.message",
-			"player",
-			"movePlayer",
-			"players",
-			"newPosition",
-			"player.position",
-			"x",
-			";\n",
-			".75",
-			"keyboard.js:22",
-			"event",
-			"name",
-			"onCommand",
-			"controller",
-			"event",
-			"handler",
-			"on",
-			"11px",
-			"\n#",
-			"#",
-			";\n",
-			"point",
-			".",
-			"position",
-			"point.direction",
-			"speed",
-			"puppeteer.node",
-			"puppeteer.particleAttributes",
-			"puppeteer.shadows",
-			"puppeteer.node",
-			" ",
-			"x",
-			"&",
-			"embedCode",
-			"true&embedCode",
-			"&",
-			"wmv",
-			"<>",
-			"'",
-			">\n",
-			"turn",
-			"alphabet",
-			"letters",
-			"isContainedInVector",
-			"isUsed",
-			"alphabet",
-			"eraseFromAlphabet",
-			"dict",
-			"&letters",
-			" &letters",
-			"&letters",
-			"getHistory",
-			"printHistoryLog",
-			"letters",
-			"c",
-			"\"",
-			"gedit.desktop"
+			"occupant"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"",
+			"\\)\\s\\{"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -291,23 +546,267 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/vasil/.cache/.fr-guA4na/node-v0.10.35/README.md",
+					"file": "server.js",
 					"settings":
 					{
-						"buffer_size": 2139,
+						"buffer_size": 2035,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								955,
-								955
+								747,
+								747
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "host/js/app/arenaView.js",
+					"settings":
+					{
+						"buffer_size": 2051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							],
+							[
+								526,
+								526
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "host/js/app/vector.js",
+					"settings":
+					{
+						"buffer_size": 2378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 0.0,
+							"encoding_helper_encoding": "Unknown",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/vasil/work/game_mutant_smasher/js/models/Agent.js",
+					"settings":
+					{
+						"buffer_size": 4704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -363,8 +862,435 @@
 							"encoding_helper_confidence": 1.0,
 							"encoding_helper_encoding": "UTF-8",
 							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1935.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/vasil/work/game_mutant_smasher/js/models/Particle.js",
+					"settings":
+					{
+						"buffer_size": 853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/vasil/work/game_mutant_smasher/js/models/Impact.js",
+					"settings":
+					{
+						"buffer_size": 1532,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/vasil/work/game_mutant_smasher/js/World.js",
+					"settings":
+					{
+						"buffer_size": 3737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2956,
+								2956
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1035.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "host/js/arena.js",
+					"settings":
+					{
+						"buffer_size": 2055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"_anf_new": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "host/js/main.js",
+					"settings":
+					{
+						"buffer_size": 2045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "host/js/app/puppeteer.js",
+					"settings":
+					{
+						"buffer_size": 1305,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								551,
+								551
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"encoding_helper_confidence": 1.0,
+							"encoding_helper_encoding": "UTF-8",
+							"encoding_helper_encoding_sublime": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -413,7 +1339,7 @@
 	},
 	"replace":
 	{
-		"height": 0.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -422,8 +1348,96 @@
 		"selected_items":
 		[
 			[
+				"pupp",
+				"host/js/app/puppeteer.js"
+			],
+			[
+				"mainjs",
+				"host/js/main.js"
+			],
+			[
+				"hoststyle",
+				"host/css/styles.css"
+			],
+			[
+				"hostinde",
+				"host/index.html"
+			],
+			[
+				"loop",
+				"host/js/app/loop.js"
+			],
+			[
+				"key",
+				"host/js/app/keyboard.js"
+			],
+			[
+				"clientcss",
+				"client/css/styles.css"
+			],
+			[
+				"shak",
+				"client/alexgibson-shake.js-87ac48d/shake.js"
+			],
+			[
+				"shake",
+				"client/js/shake.js"
+			],
+			[
+				"index",
+				"client/index.html"
+			],
+			[
+				"style",
+				"host/css/styles.css"
+			],
+			[
+				"clieninde",
+				"client/index.html"
+			],
+			[
+				"cliensty",
+				"client/css/styles.css"
+			],
+			[
+				"view",
+				"host/js/app/view.js"
+			],
+			[
+				"control",
+				"host/js/app/controller.js"
+			],
+			[
+				"host",
+				"host/js/app/host.js"
+			],
+			[
+				"client",
+				"host/js/app/client.js"
+			],
+			[
+				"main",
+				"host/js/main.js"
+			],
+			[
 				"ind",
-				"index.html"
+				"client/index.html"
+			],
+			[
+				"indexhtml",
+				"host/index.html"
+			],
+			[
+				"proc",
+				"Procfile"
+			],
+			[
+				"styles",
+				"host/css/styles.css"
+			],
+			[
+				"controll",
+				"host/js/app/controller.js"
 			]
 		],
 		"width": 0.0
@@ -439,7 +1453,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 150.0,
 	"status_bar_visible": true
 }

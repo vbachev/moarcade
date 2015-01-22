@@ -1,5 +1,4 @@
 define([ 'jquery' ], function ( $ ) {
-    'use strict';
 
     return function () {
         var handlers = [];
@@ -33,6 +32,9 @@ define([ 'jquery' ], function ( $ ) {
                         break;
                     case 37: // LEFT
                         execute('left');
+                        break;
+                    case 32: // SPACE
+                        execute('space');
                         break;
                     case 87: // W
                         execute('w');

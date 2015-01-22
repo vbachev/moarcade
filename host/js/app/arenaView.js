@@ -6,10 +6,9 @@ define([ 'app/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
         var playersLeft=[];
 
         var settings = {
-            grid : {
-                width : 100,
-                height : 100,
-                cellSize : 20
+            stage : {
+                width : 600,
+                height : 600
             }
         };
         $.extend( true, settings, config );
@@ -19,33 +18,31 @@ define([ 'app/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
         return {
 
             initialize : function () {
-                var cellSize = settings.grid.cellSize + 1;
-                var halfCellSize = settings.grid.cellSize / 2 + 1;
                 $('.stage').attr( 'style', [
-                    'width:'+( settings.grid.width * cellSize + 1 )+'px;',
-                    'height:'+( settings.grid.height * cellSize + 1 )+'px;',
-                    '-webkit-background-size:' + cellSize + 'px ' + cellSize + 'px;',
-                    '-moz-background-size:' + cellSize + 'px ' + cellSize + 'px;',
-                    'background-size:' + cellSize + 'px ' + cellSize + 'px;'
-                ].join(' '))
-                .find('.puppeteer').css({
-                    top : halfCellSize,
-                    left : halfCellSize
-                });
+                    'width:'+settings.stage.width+'px;',
+                    'height:'+settings.stage.height+'px;'
+                ].join(' '));
             },
 
             render : function ( DTOs ){
-                var cellSize = settings.grid.cellSize + 1;
                 for( var key in DTOs ){
                     var item = DTOs[ key ];
-                    puppeteer.addParticle( item.position.x * cellSize, item.position.y * cellSize, { color : item.color } );
 
-                    if( item.type=='player' ){
+                    puppeteer.addParticle( item.position.x, item.position.y, {
+                        size : item.size/2,
+                        color : item.color,
+                        blur : item.blur || 0
+                    });
 
-                        // print tail
-                        item.tail.forEach( function ( tailItem ) {
-                            puppeteer.addParticle( tailItem.x * cellSize, tailItem.y * cellSize, { color : item.color, size : 6 } );
-                        });
+                    if( item.type == 'player' ){
+
+                        // print health
+                        for( var i=0; i < item.health; i++ ){
+                            puppeteer.addParticle( item.position.x - 5 + (i*5), item.position.y - 15, {
+                                size : 1,
+                                color : 'red'
+                            });
+                        }
 
                         // print new joiner text
                         if( playersJoined.indexOf(item.id) > -1 ){

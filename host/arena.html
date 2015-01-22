@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arena</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/lib/require.js" data-main="js/arenaMain.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/arena.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="puppeteer"></div>
+    </div>
+    <div class="dashboard">
+        <h1>Arena</h1>
+        <p class="joinMessage"></p>
+        <div class="qrCode"></div>
+        <p>Players:</p>
+        <ul class="players"></ul>
+    </div>
+</body>
+</html>

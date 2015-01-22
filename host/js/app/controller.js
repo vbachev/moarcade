@@ -1,5 +1,4 @@
 define([ 'jquery' ], function ( $ ) {
-    'use strict';
 
     var Controller = function ( config ) {
 
@@ -34,6 +33,10 @@ define([ 'jquery' ], function ( $ ) {
             } else {
                 return getRandomPosition();
             }
+        }
+
+        function getRandomColor () {
+            return 'hsl(' + (Math.floor(Math.random()*18)*20) + ',100%,30%)';
         }
 
         function positionIsAllowed ( pos ) {
@@ -139,7 +142,7 @@ define([ 'jquery' ], function ( $ ) {
                     id : data.id,
                     type : 'player',
                     name : data.name,
-                    color : data.color || 'hsl(' + (Math.floor(Math.random()*18)*20) + ',100%,30%)',
+                    color : data.color || getRandomColor(),
                     position : getRandomPosition(),
                     tail : []
                 };
@@ -163,6 +166,14 @@ define([ 'jquery' ], function ( $ ) {
                 }
 
                 moves.push( data );
+            },
+
+            addAction : function ( data ) {
+                if( !data ){
+                    return;
+                }
+
+                agents[ data.id ].color = getRandomColor();
             },
 
             play : function(){

@@ -1,5 +1,4 @@
 define([ 'app/keyboard' ], function ( Keyboard ) {
-    'use strict';
 
     var Client = function ( config ) {
 
@@ -38,6 +37,9 @@ define([ 'app/keyboard' ], function ( Keyboard ) {
                         else if( p2Keys.indexOf( keyName ) != -1 ){
                             commandId = 41;
                             keyName = p1Keys[ p2Keys.indexOf( keyName )];
+                        } else if( keyName == 'space' ){
+                            commandId = 42;
+                            keyName = 'shake';
                         }
 
                         callback({

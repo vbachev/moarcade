@@ -1,5 +1,4 @@
 define(function(){
-    'use strict';
 
     var Core = function ( config ) {
 
