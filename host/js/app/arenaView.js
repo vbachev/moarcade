@@ -38,15 +38,21 @@ define([ 'app/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
 
                         // print health
                         for( var i=0; i < item.health; i++ ){
-                            puppeteer.addParticle( item.position.x - 5 + (i*5), item.position.y - 15, {
+                            puppeteer.addParticle( item.position.x - 5 + (i*5), item.position.y - 20, {
                                 size : 1,
                                 color : 'red'
                             });
                         }
 
+                        // print score
+                        if( item.score !== item.lastScore ){
+                            $('#player-'+item.id+' b').text(item.score);
+                            item.lastScore == item.score;
+                        }
+
                         // print new joiner text
                         if( playersJoined.indexOf(item.id) > -1 ){
-                            $('.players').append( $('<li class="player-'+item.id+'" style="color:'+item.color+'">'+(item.name || 'Anonymous '+item.id)+'</li>'));
+                            $('.players').append( $('<li id="player-'+item.id+'" style="color:'+item.color+'">'+(item.name || 'Anonymous '+item.id)+' - <b>'+item.score+'</b></li>'));
                         }
                     }
                 }

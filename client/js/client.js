@@ -1,5 +1,7 @@
 var clientId = 0;
 var connection;
+var emitIntervals = {};
+var emitPeriod = 300;
 
 function bindEventHandlers () {
     $('#joinButton').on( 'click', function(){
@@ -9,27 +11,45 @@ function bindEventHandlers () {
             room : window.location.href.split('host=')[1]
         });
         document.body.className = 'joined';
+
+        $('.login').remove(); // well ... that escalated quickly!
     });
 
-    $('#upButton').on( 'touchstart', function(){
-        connection.emit( 'up', clientId );
-    });
+    $('#upButton')
+        .on( 'touchstart', function(){ startEmitting( 'up' ); })
+        .on( 'touchend',   function(){  stopEmitting( 'up' ); });
 
-    $('#rightButton').on( 'touchstart', function(){
-        connection.emit( 'right', clientId );
-    });
+    $('#rightButton')
+        .on( 'touchstart', function(){ startEmitting( 'right' ); })
+        .on( 'touchend',   function(){  stopEmitting( 'right' ); });
 
-    $('#downButton').on( 'touchstart', function(){
-        connection.emit( 'down', clientId );
-    });
+    $('#downButton')
+        .on( 'touchstart', function(){ startEmitting( 'down' ); })
+        .on( 'touchend',   function(){  stopEmitting( 'down' ); });
 
-    $('#leftButton').on( 'touchstart', function(){
-        connection.emit( 'left', clientId );
-    });
+    $('#leftButton')
+        .on( 'touchstart', function(){ startEmitting( 'left' ); })
+        .on( 'touchend',   function(){  stopEmitting( 'left' ); });
 
     $(window).on( 'shake', function(){
-        connection.emit( 'shake', clientId );
+        emit('shake');
     });
+}
+
+function emit ( eventName ) {
+    connection.emit( eventName, clientId );
+}
+
+function startEmitting ( eventName ) {
+    emit( eventName );
+    stopEmitting( eventName );
+    emitIntervals[ eventName ] = setInterval( function () {
+        emit( eventName );
+    }, emitPeriod );
+}
+
+function stopEmitting ( eventName ) {
+    clearInterval( emitIntervals[ eventName ] );
 }
 
 $(function(){

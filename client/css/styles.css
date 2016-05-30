@@ -1,9 +1,11 @@
 body {
     background: #333;
     text-align: center;
+    font-family: sans-serif;
 }
 
-button {
+.button {
+    display: inline-block;
     width: 90px;
     height: 90px;
     margin: 0 3px 10px;
@@ -12,8 +14,13 @@ button {
     background: #eee;
     color: #666;
     font-weight: bold;
-    -webkit-appearance: none;
+    font-size: 14px;
+    line-height: 70px;
     outline: 0 none;
+    cursor: pointer;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     -webkit-touch-callout:none;
@@ -24,15 +31,12 @@ button {
     user-select:none;
 }
 
-button:hover {
-    opacity: .8;
-    color: #000;
-}
-
-button:active {
+.button:active {
     position: relative;
-    top: 1px;
-    opacity: .5;
+    top: 2px;
+    opacity: .75;
+    transition: all .1s;
+    color: #000;
 }
 
 .keys {
@@ -51,7 +55,6 @@ button:active {
 .login label {
     display: block;
     color: #aaa;
-    font-family: sans-serif;
     margin: 0 0 10px;
 }
 

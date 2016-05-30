@@ -12,35 +12,24 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
                 height : 600
             },
             player : {
-                size        : 20,
+                size        : 30,
                 speed       : 3,
-                maxSpeed    : 4,
+                maxSpeed    : 6,
                 bounceSpeed : 0.5,
-                friction    : 0.15,
+                friction    : 0.2,
                 spawnTime   : 3000,
                 health      : 3,
             },
             weapon : {
-
-                // spear
-                // size     : 10,
-                // distance : 25,
-
-                // flail
-                // size     : 30,
-                // distance : 5,
-
-                // sword
-                size     : 20,
-                distance : 15,
-
+                size     : 40,
+                distance : 10,
                 lifetime : 200,
                 color    : '#666'
             },
             corpse : {
-                size  : 15,
-                color : '#310',
-                blur  : 0
+                size     : 25,
+                color    : '#310',
+                lifetime : 10000
             }
         };
         $.extend( true, settings, config );
@@ -83,7 +72,12 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
                     if( parent && agent.lifetime > 0 ){
                         agent.position = parent.position.clone().add( parent.direction.clone().mult( settings.weapon.distance ));
                     } else {
-                        destroyWeapon( agent.id );
+                        destroyAgent( agent.id );
+                    }
+                } else if( agent.type == 'corpse' ){
+                    agent.lifetime -= dt;
+                    if( agent.lifetime < 0 ){
+                        destroyAgent( agent.id );
                     }
                 } else if( agent.type == 'player' ){
                     detectCollision( agent );
@@ -130,6 +124,7 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
                             agent.lastHitId = otherAgent.id;
                             if( agent.health <= 0 ){
                                 killPlayer( agent.id );
+                                agents[ otherAgent.parent ].score++;
                             }
                         }
                     } else {
@@ -154,7 +149,7 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
             agents[ weapon.id ] = weapon;
         }
 
-        function destroyWeapon ( id ) {
+        function destroyAgent ( id ) {
             delete agents[ id ];
         }
 
@@ -162,10 +157,11 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
             var agent = agents[ id ];
             var corpse = {
                 id       : 'corpse-'+(++idIndex),
+                type     : 'corpse',
                 size     : settings.corpse.size,
                 color    : settings.corpse.color,
-                blur     : settings.corpse.blur,
-                position : agent.position.clone()
+                position : agent.position.clone(),
+                lifetime : settings.corpse.lifetime
             };
             agents[ corpse.id ] = corpse;
 
@@ -200,6 +196,7 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
                     id           : data.id,
                     type         : 'player',
                     name         : data.name,
+                    score        : 0,
                     color        : data.color || getRandomColor(),
                     size         : data.size || settings.player.size,
                     position     : getRandomPosition(),
@@ -213,11 +210,7 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
             },
 
             removePlayer : function ( data ) {
-                if( !data || !data.id || !agents[data.id] ){
-                    return;
-                }
-
-                delete agents[data.id];
+                destroyAgent( data.id )
             },
 
             addMove : function ( data ) {
