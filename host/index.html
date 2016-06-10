@@ -4,21 +4,29 @@
 	<meta charset="UTF-8">
 	<title>Gridcraft</title>
 
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="js/lib/require.js" data-main="js/main.js"></script>
-
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="stage">
-		<div class="puppeteer"></div>
-	</div>
+    <div class="gameboard"></div>
 	<div class="dashboard">
 		<h1>Gridcraft</h1>
-		<p class="joinMessage"></p>
-		<div class="qrCode"></div>
-		<p>Players:</p>
-		<ul class="players"></ul>
+		<ul class="sections">
+			<li class="section_join">
+				<h2>Join</h2>
+				<p>
+					Open this link on your mobile phone or scan the QR code below to join the game.
+				</p>
+				<p class="joinMessage"></p>
+				<div class="qrCode"></div>
+			</li>
+			<li class="section_players">
+				<h2>Players</h2>
+				<ul class="players"></ul>
+			</li>
+		</ul>
 	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/lib/require.js" data-main="js/main.js"></script>
 </body>
 </html>

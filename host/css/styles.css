@@ -1,13 +1,117 @@
 html, body {
-    /*height: 100%;*/
-    background: #333;
+    background: #0d0a10;
     font-family: sans-serif;
+    color: #8d8171;
 }
+
+.dashboard {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    overflow: auto;
+    font-size: 14px;
+    background: #231726;
+    border-right: 1px solid #323;
+}
+
+.dashboard h1,
+.sections h2,
+.sections a,
+.games-title {
+    color: #cbb89a;
+}
+
+.dashboard h1 {
+    margin: 20px;
+}
+
+.gameboard {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 260px;
+}
+
+.sections {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+}
+
+.sections > li {
+    padding: 0 10px 10px;
+}
+
+.qrCode {
+    background: #dcd0bc;
+    padding: 20px;
+    min-height: 180px;
+    border-radius: 3px;
+}
+
+.players {
+    list-style-type: initial;
+    list-style-position: inside;
+    padding: 10px 15px;
+    margin: 10px 0 0;
+    background: #0d0a10;
+    border: 1px solid #323;
+    border-radius: 3px;
+}
+
+.players li {
+    position: relative;
+    padding: 5px 30px 5px 0;
+    border-bottom: 1px dashed #112;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.players li:last-of-type {
+    border-bottom: none;
+}
+
+.players li .score {
+    position: absolute;
+    right: 0;
+    opacity: .5;
+}
+
+.games-title {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.games-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 100px;
+    text-align: center;
+}
+
+.games-list li {
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: #231726;
+    border-radius: 3px;
+}
+
+.games-list li:hover {
+    color: #cbb89a;
+    background: #323;
+}
+
 
 .stage {
     position: relative;
-    height: 100%;
-    margin: 0 auto;
+    margin: 60px auto;
 
     background-image:
         -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(0,0,0,.5)), color-stop(0.01, transparent), to(transparent)),
@@ -25,19 +129,4 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.dashboard {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 10px;
-    background: rgba(255,255,255,.8);
-    border: 1px solid #000;
-}
-
-.dashboard .players {
-    padding:0 0 0 20px;
-    margin:10px 0;
-    list-style-type: square;
 }

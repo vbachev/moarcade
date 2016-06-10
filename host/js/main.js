@@ -1,83 +1,41 @@
 requirejs.config({
-    baseUrl: 'js/lib',
-    paths: {
-        app: '../app',
+    baseUrl : 'js/lib',
+    paths : {
+        app : '../app',
+        game : '../game'
     }
 });
 
-define(
-    [ 'jquery', 'app/host', 'app/core', 'app/loop', 'app/controller', 'app/view' ],
-    // [ 'jquery', 'app/client', 'app/core', 'app/loop', 'app/controller', 'app/view' ], // mocking
-    function( $, Host, Core, Loop, Controller, View ){
+require([ 'jquery', 'app/host', 'app/loop', 'app/dashboard', 'game/main' ], function($, Host, Loop, Dashboard, GameManager){
+    window.app = new Host();
 
-    var stageConfig = {
-        grid : {
-            width : 20,
-            height : 20,
-            cellSize : 20
-        }
-    };
+    app.on('player_joined', function (event) {
+        Dashboard.addPlayer(event.data);
+        Dashboard.updateScore(event.data);
+    });
 
-    window.app = {};
+    app.on('player_scores', function (event) {
+        Dashboard.updateScore(event.data);
+    });
+    
+    app.on('player_left', function (event) {
+        Dashboard.removePlayer(event.data);
+    });
 
-    app.core = new Core();
-    app.on = app.core.on;
-    app.off = app.core.off;
-    app.trigger = app.core.trigger;
+    app.on('connected', function (event) {
+        Dashboard.setURL(event.data);
+        GameManager.initialize();
+    });
 
-    app.host = new Host();
-    app.loop = new Loop();
-    app.controller = new Controller( stageConfig );
-    app.view = new View( stageConfig );
-
-    app.on( 'start', function(){
-        app.host.initialize( function ( data ) {
-            app.trigger( 'command', data );
-        });
-
-        app.view.initialize();
-
-        app.loop.start( function ( dt ) {
-            app.trigger( 'loop' );
+    app.on('game_started', function (event) {
+        app.game = event.data;
+        Loop.start(function (dt) {
+            app.trigger('loop', dt);
         });
     });
 
-    app.on( 'stop', function(){
-        app.loop.stop();
-    });
-
-    app.on( 'command', function ( data ) {
-        switch( data.message ){
-            case 'player_joined':
-                app.controller.addPlayer( data );
-                app.view.addPlayer( data );
-                break;
-            case 'player_left':
-                app.controller.removePlayer( data );
-                app.view.removePlayer( data );
-                break;
-            case 'up':
-            case 'right':
-            case 'down':
-            case 'left':
-                app.controller.addMove( data );
-                break;
-            case 'shake':
-                app.controller.addAction( data );
-                break;
-            case 'host_ready':
-                app.view.setURL( data );
-                break;
-        }
-    });
-
-    app.on( 'loop', function () {
-        app.controller.play();
-        app.view.render( app.controller.getDTO() );
-    });
-
-    $(function(){
-        app.trigger( 'start' );
+    app.on('game_ended', function (event) {
+        Loop.stop();
     });
 
 });

@@ -1,43 +1,64 @@
-define([ 'socket.io' ], function ( io ) {
-
-    var Host = function ( config ){
-
+define([ 'socket.io', 'app/observer', 'app/player' ], function (io, Observer, Player) {
+    
+    var Host = function () {
+        var observer = new Observer();
         var hostId = 0;
         var hostURL;
         var socket;
+        var players = [];
+        
+        function initialize () {
+            socket = io.connect('/');
+            socket.on('welcome', onConnection);
+            socket.on('command', onCommand);
+            socket.on('player_joined', addPlayer);
+            socket.on('player_left', removePlayer);
+        }
 
-        return {
-            initialize : function ( callback ) {
-                socket = io.connect('/');
+        function onConnection (id) {
+            hostId = id;
+            hostURL = window.location.origin + '/join?host=' + hostId;
 
-                socket.on( 'welcome', function ( hostId ) {
-                    hostURL = window.location.origin + '/join?host=' + hostId;
+            socket.emit('host_ready');
 
-                    socket.emit('host_ready');
-                    callback({
-                        message : 'host_ready',
-                        id : hostId,
-                        url : hostURL
-                    });
-                });
+            observer.trigger('connected', {
+                id : hostId,
+                url : hostURL
+            });
+        }
 
-                socket.on( 'player_joined', function ( data ) {
-                    data.message = 'player_joined';
-                    callback(data);
-                });
+        function onCommand (data) {
+            observer.trigger('command', data);
+        }
+        
+        function addPlayer (data) {
+            var newPlayer = new Player(data);
+            players.push(newPlayer);
+            observer.trigger('player_joined', newPlayer);
+        }
 
-                socket.on( 'player_left', function ( data ) {
-                    data.message = 'player_left';
-                    callback(data);
-                });
-
-                socket.on( 'command', function ( data ) {
-                    callback(data);
-                });
+        function removePlayer (data) {
+            var i, removedPlayer;
+            for(i = 0; i < players.length; i++){
+                if(players[i].id == data.id){
+                    removedPlayer = players.splice(i, 1)[0];
+                    break;
+                }
+            }
+            if(removedPlayer){
+                observer.trigger('player_left', removedPlayer);
             }
         }
 
-    };
+        initialize();
+
+        return {
+            players : players,
+            on : observer.on,
+            off : observer.off,
+            trigger : observer.trigger
+        }
+    }
 
     return Host;
 });

@@ -3,7 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.set('port', (process.env.PORT || 5000));
+app.set( 'port', (process.env.PORT || 5000));
 app.use( express.static( __dirname + '/host' ));
 app.use( '/join', express.static( __dirname + '/client' ));
 
@@ -33,11 +33,13 @@ io.on( 'connection', function ( socket ) {
 
 	// join host room when client is initialized
 	socket.on('player_ready', function( data ){
-		console.log('player connected: '+data.id+data.name);
+		data.id = clientId;
 
 		roomId = data.room || latestHostId;
-		console.log('client joins room '+roomId);
 		socket.join( roomId );
+
+		console.log('player connected: ' + data.id + ' ' + data.name);
+		console.log('player joins room ' + roomId);
 
 		socket.broadcast.to( roomId ).emit('player_joined', data);
 	});
@@ -48,39 +50,10 @@ io.on( 'connection', function ( socket ) {
 		socket.broadcast.to( roomId ).emit('player_left', { id : clientId });
 	});
 
-	socket.on( 'up', function ( id ) {
+	socket.on( 'command', function ( commandName ) {
 		socket.broadcast.to( roomId ).emit( 'command', {
-			message : 'up',
-			id : id
+			message : commandName,
+			id : clientId
 		});
 	});
-
-	socket.on( 'right', function ( id ) {
-		socket.broadcast.to( roomId ).emit( 'command', {
-			message : 'right',
-			id : id
-		});
-	});
-
-	socket.on( 'down', function ( id ) {
-		socket.broadcast.to( roomId ).emit( 'command', {
-			message : 'down',
-			id : id
-		});
-	});
-
-	socket.on( 'left', function ( id ) {
-		socket.broadcast.to( roomId ).emit( 'command', {
-			message : 'left',
-			id : id
-		});
-	});
-
-	socket.on( 'shake', function ( id ) {
-		socket.broadcast.to( roomId ).emit( 'command', {
-			message : 'shake',
-			id : id
-		});
-	});
-
 });

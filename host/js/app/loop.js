@@ -1,41 +1,35 @@
 define(function(){
+    var interval;
+    var isPaused = false;
+    var delay = 1000 / 60; // 60fps
+    var lastTime;
 
-    var Loop = function( fps ){
+    function getTimeDelta () {
+        var newTime = new Date();
+        var dt = newTime - lastTime;
+        lastTime = newTime;
+        return dt;
+    }
 
-        var interval;
-        var isPaused = false;
-        var delay = fps || 1000 / 60; // 60fps
-        var lastTime;
+    return {
+        start : function( callback ){
+            interval = setInterval( function(){
+                if( !isPaused ){
+                    callback( getTimeDelta() );
+                }
+            }, delay );
+        },
 
-        function getTimeDelta () {
-            var newTime = new Date();
-            var dt = newTime - lastTime;
-            lastTime = newTime;
-            return dt;
+        pause : function(){
+            isPaused = true;
+        },
+
+        resume : function(){
+            isPaused = false;
+        },
+
+        stop : function(){
+            clearInterval( interval );
         }
-
-        return {
-            start : function( callback ){
-                interval = setInterval( function(){
-                    if( !isPaused ){
-                        callback( getTimeDelta() );
-                    }
-                }, delay );
-            },
-
-            pause : function(){
-                isPaused = true;
-            },
-
-            resume : function(){
-                isPaused = false;
-            },
-
-            stop : function(){
-                clearInterval( interval );
-            }
-        };
     };
-
-    return Loop;
 });

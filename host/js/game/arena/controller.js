@@ -1,4 +1,4 @@
-define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
+define([ 'jquery', 'game/vector' ], function ( $, Vector ) {
 
     var Controller = function ( config ) {
 
@@ -125,6 +125,10 @@ define([ 'jquery', 'app/vector' ], function ( $, Vector ) {
                             if( agent.health <= 0 ){
                                 killPlayer( agent.id );
                                 agents[ otherAgent.parent ].score++;
+                                app.trigger('player_scores', {
+                                    id : otherAgent.parent,
+                                    score : agents[ otherAgent.parent ].score
+                                });
                             }
                         }
                     } else {

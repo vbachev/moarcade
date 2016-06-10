@@ -1,12 +1,14 @@
-var clientId = 0;
 var connection;
 var emitIntervals = {};
 var emitPeriod = 300;
 
 function bindEventHandlers () {
+    connection.on('welcome', function ( playerId ) {
+        // clientId = data;
+    });
+
     $('#joinButton').on( 'click', function(){
         connection.emit( 'player_ready', {
-            id : clientId,
             name : document.getElementById('name').value,
             room : window.location.href.split('host=')[1]
         });
@@ -15,29 +17,31 @@ function bindEventHandlers () {
         $('.login').remove(); // well ... that escalated quickly!
     });
 
-    $('#upButton')
-        .on( 'touchstart', function(){ startEmitting( 'up' ); })
-        .on( 'touchend',   function(){  stopEmitting( 'up' ); });
+    $('.keys .button').on( 'touchstart touchend click', function ( e ) {
+        var command = $(this).data('commandname');
+        switch( e.type ){
+            
+            case 'touchstart':
+                startEmitting( command );
+                break;
 
-    $('#rightButton')
-        .on( 'touchstart', function(){ startEmitting( 'right' ); })
-        .on( 'touchend',   function(){  stopEmitting( 'right' ); });
-
-    $('#downButton')
-        .on( 'touchstart', function(){ startEmitting( 'down' ); })
-        .on( 'touchend',   function(){  stopEmitting( 'down' ); });
-
-    $('#leftButton')
-        .on( 'touchstart', function(){ startEmitting( 'left' ); })
-        .on( 'touchend',   function(){  stopEmitting( 'left' ); });
+            case 'touchend':
+                stopEmitting( command );
+                break;
+            
+            case 'click':
+                emit( command );
+                break;
+        } 
+    });
 
     $(window).on( 'shake', function(){
         emit('shake');
     });
 }
 
-function emit ( eventName ) {
-    connection.emit( eventName, clientId );
+function emit ( commandName ) {
+    connection.emit( 'command', commandName );
 }
 
 function startEmitting ( eventName ) {
@@ -54,10 +58,6 @@ function stopEmitting ( eventName ) {
 
 $(function(){
     connection = io.connect('/');
-
-    connection.on('welcome', function (data) {
-        clientId = data;
-    });
 
     var shakeDetector = new Shake({
         threshold: 10, // shake strength threshold
