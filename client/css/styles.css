@@ -10,7 +10,7 @@ body {
     height: 90px;
     margin: 0 3px 10px;
     border: 10px solid;
-    border-color: #fff #aaa #888 #ddd;
+    border-color: rgba(255,255,255,.6) rgba(120,120,120,.6) rgba(50,50,50,.6) rgba(220,220,220,.6);
     background: #eee;
     color: #666;
     font-weight: bold;
@@ -29,17 +29,56 @@ body {
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
+
+    transition: all .1s;
 }
 
 .button:active {
     position: relative;
     top: 2px;
     opacity: .75;
-    transition: all .1s;
     color: #000;
 }
 
-.keys {
+.game-chase .button.up,
+.game-chase .button.right,
+.game-chase .button.down,
+.game-chase .button.left,
+.game-snake .button.action {
+    display: none;
+}
+
+.game-arena .button.action {
+    background: #b22;
+    color: rgba(255,255,255,.8);
+}
+
+.game-chase .button.action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin: -100px 0 0 -100px;
+    background: #b22;
+    border: 0 none;
+    border-radius: 100%;
+    line-height: 200px;
+    color: rgba(255,255,255,.8);
+    text-shadow: -1px -1px rgba(0,0,0,.8);
+    box-shadow: 
+        inset 0 20px 50px rgba(255,255,255,.2), 
+        inset 0 -20px 50px rgba(0,0,0,.2),
+        inset 0 0 5px 4px rgba(0,0,0,.7), 
+        0 2px 0px 3px rgba(0,0,0,.5);
+}
+
+.game-chase .button.action:active {
+    margin-top: -98px;
+}
+
+.keys,
+.joined.waiting .keys {
     display: none;
     margin: 20px 0;
 }

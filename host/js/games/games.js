@@ -13,6 +13,10 @@ define(function(){
         {
             key : 'arena',
             name : 'Battle Arena'
+        },
+        {
+            key : 'chase',
+            name : 'Chase'
         }
     ];
 
@@ -26,8 +30,12 @@ define(function(){
 
     function loadGame ( key ) {
         $('.gameboard').empty();
-        require(['game/' + key], function(gameInstance){
-            app.trigger('game_started', gameInstance);
+        require(['games/' + key + '/' + key], function(gameInstance){
+            // the game script is now loaded and executed
+            app.trigger('game_started', {
+                key : key,
+                instance :gameInstance
+            });
         });
     }
 

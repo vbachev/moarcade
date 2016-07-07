@@ -18,7 +18,7 @@ http.listen( app.get('port'), function(){
 // when a new socket is created
 io.on( 'connection', function ( socket ) {
 	var clientId = ++idIndex;
-	var roomId = 0;
+	var hostId = 0;
 
 	// notify client of its ID
 	socket.emit( 'welcome', clientId );
@@ -31,29 +31,34 @@ io.on( 'connection', function ( socket ) {
 		latestHostId = clientId;
 	});
 
+	socket.on('game_started', function ( gameKey ) {
+		socket.to( clientId ).emit( 'game_started', gameKey );
+	});
+
 	// join host room when client is initialized
 	socket.on('player_ready', function( data ){
 		data.id = clientId;
 
-		roomId = data.room || latestHostId;
-		socket.join( roomId );
+		hostId = data.room || latestHostId;
+		socket.join( hostId );
 
 		console.log('player connected: ' + data.id + ' ' + data.name);
-		console.log('player joins room ' + roomId);
+		console.log('player joins room ' + hostId);
 
-		socket.broadcast.to( roomId ).emit('player_joined', data);
+		socket.broadcast.to( hostId ).emit('player_joined', data);
 	});
 
 	// when a player is leaving
 	socket.on('disconnect', function(){
 		console.log('user disconnected: '+clientId);
-		socket.broadcast.to( roomId ).emit('player_left', { id : clientId });
+		socket.broadcast.to( hostId ).emit('player_left', { id : clientId });
 	});
 
-	socket.on( 'command', function ( commandName ) {
-		socket.broadcast.to( roomId ).emit( 'command', {
+	socket.on( 'command', function ( commandName, data ) {
+		socket.broadcast.to( hostId ).emit( 'command', {
 			message : commandName,
-			id : clientId
+			id : clientId,
+			data : data
 		});
 	});
 });

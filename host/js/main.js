@@ -2,11 +2,11 @@ requirejs.config({
     baseUrl : 'js/lib',
     paths : {
         app : '../app',
-        game : '../game'
+        games : '../games'
     }
 });
 
-require([ 'jquery', 'app/host', 'app/loop', 'app/dashboard', 'game/main' ], function($, Host, Loop, Dashboard, GameManager){
+require([ 'jquery', 'app/host', 'app/loop', 'app/dashboard', 'app/mock', 'games/games' ], function(_$, Host, Loop, Dashboard, Mock, GamesManager){
     window.app = new Host();
 
     app.on('player_joined', function (event) {
@@ -24,11 +24,14 @@ require([ 'jquery', 'app/host', 'app/loop', 'app/dashboard', 'game/main' ], func
 
     app.on('connected', function (event) {
         Dashboard.setURL(event.data);
-        GameManager.initialize();
+        GamesManager.initialize();
+        
+        new Mock();
     });
 
     app.on('game_started', function (event) {
-        app.game = event.data;
+        app.game = event.data.instance;
+        app.game.key = event.data.key;
         Loop.start(function (dt) {
             app.trigger('loop', dt);
         });
@@ -37,5 +40,4 @@ require([ 'jquery', 'app/host', 'app/loop', 'app/dashboard', 'game/main' ], func
     app.on('game_ended', function (event) {
         Loop.stop();
     });
-
 });

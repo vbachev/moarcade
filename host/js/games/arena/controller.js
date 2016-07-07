@@ -1,4 +1,4 @@
-define([ 'jquery', 'game/vector' ], function ( $, Vector ) {
+define([ 'jquery', 'games/vector' ], function ( $, Vector ) {
 
     var Controller = function ( config ) {
 

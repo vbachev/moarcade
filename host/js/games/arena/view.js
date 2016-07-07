@@ -1,4 +1,4 @@
-define([ 'game/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
+define([ 'games/puppeteer', 'qrcode' ], function ( Puppeteer, _QRCode ) {
 
     var View = function( config ){
 

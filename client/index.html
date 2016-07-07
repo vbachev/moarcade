@@ -7,13 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
 
 		<link rel="stylesheet" href="css/styles.css">
-
-		<script src="/socket.io/socket.io.js"></script>
-		<script src="js/jquery.js"></script>
-		<script src="js/shake.js"></script>
-		<script src="js/client.js"></script>
 	</head>
-	<body>
+	<body class="waiting">
 		<div class="login">
 			<label for="name">What is your name?</label>
 			<input id="name" type="text" name="name" class="name">
@@ -24,9 +19,14 @@
 			<div id="upButton" class="button up" data-commandname="up">UP</div>
 			<br>
 			<div id="leftButton" class="button left" data-commandname="left">LEFT</div>
-			<div id="downButton" class="button down" data-commandname="down">DOWN</div>
+			<div id="actionButton" class="button action" data-commandname="action">HIT</div>
 			<div id="rightButton" class="button right" data-commandname="right">RIGHT</div>
 			<br>
+			<div id="downButton" class="button down" data-commandname="down">DOWN</div>
 		</div>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/client.js"></script>
 	</body>
 </html>

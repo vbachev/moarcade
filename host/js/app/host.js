@@ -13,6 +13,10 @@ define([ 'socket.io', 'app/observer', 'app/player' ], function (io, Observer, Pl
             socket.on('command', onCommand);
             socket.on('player_joined', addPlayer);
             socket.on('player_left', removePlayer);
+
+            observer.on('game_started', function (event) {
+               socket.emit('game_started', event.data.key); 
+            });
         }
 
         function onConnection (id) {
@@ -35,6 +39,10 @@ define([ 'socket.io', 'app/observer', 'app/player' ], function (io, Observer, Pl
             var newPlayer = new Player(data);
             players.push(newPlayer);
             observer.trigger('player_joined', newPlayer);
+
+            if(app.game){
+                socket.emit('game_started', app.game.key);
+            }
         }
 
         function removePlayer (data) {

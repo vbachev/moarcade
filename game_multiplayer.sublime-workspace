@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"removed",
+				"removedPlayer	host.js"
+			],
+			[
 				"hea",
 				"health	arenaController.js"
 			],
@@ -80,58 +84,35 @@
 	"buffers":
 	[
 		{
-			"file": "host/arena.html",
+			"file": "notes.md",
 			"settings":
 			{
-				"buffer_size": 613,
+				"buffer_size": 566,
+				"line_ending": "Unix",
+				"name": "socket communication server + host + client"
+			}
+		},
+		{
+			"file": "host/js/main.js",
+			"settings":
+			{
+				"buffer_size": 984,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/vbachev/work/chetime/apps/era_books/.htaccess",
+			"file": "host/css/styles.css",
 			"settings":
 			{
-				"buffer_size": 3877,
+				"buffer_size": 2393,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "host/js/arenaMain.js",
+			"file": "host/js/game/main.js",
 			"settings":
 			{
-				"buffer_size": 2104,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "host/js/app/arenaController.js",
-			"settings":
-			{
-				"buffer_size": 8574,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "host/js/app/arenaView.js",
-			"settings":
-			{
-				"buffer_size": 3074,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "host/js/app/puppeteer.js",
-			"settings":
-			{
-				"buffer_size": 1305,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/js/client.js",
-			"settings":
-			{
-				"buffer_size": 1881,
+				"buffer_size": 1264,
 				"line_ending": "Unix"
 			}
 		}
@@ -139,9 +120,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 264.0,
 		"selected_items":
 		[
+			[
+				"rename",
+				"File: Rename"
+			],
 			[
 				"toggle",
 				"View: Toggle Side Bar"
@@ -215,10 +200,6 @@
 				"ANF: New File"
 			],
 			[
-				"rename",
-				"File: Rename"
-			],
-			[
 				"disa",
 				"Package Control: Disable Package"
 			],
@@ -284,7 +265,37 @@
 	},
 	"file_history":
 	[
+		"/home/vbachev/work/game_multiplayer/host/js/game/main.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/dashboard.js",
+		"/home/vbachev/work/game_multiplayer/host/js/game/snake/view.js",
+		"/home/vbachev/work/game_multiplayer/host/index.html",
+		"/home/vbachev/work/game_multiplayer/host/js/game/arena/view.js",
+		"/home/vbachev/work/game_multiplayer/host/js/game/arena/controller.js",
+		"/home/vbachev/work/game_multiplayer/host/js/game/snake.js",
+		"/home/vbachev/work/game_multiplayer/host/arena.html",
+		"/home/vbachev/work/game_multiplayer/host/js/game/arena.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/keyboard.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/grid.js",
+		"/home/vbachev/work/game_multiplayer/host/js/arenaMain.js",
+		"/home/vbachev/work/game_multiplayer/host/js/main (copy).js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/arenaView.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/controller.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/view.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/host.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/player.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/loop.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/observer.js",
+		"/home/vbachev/work/audioapi/public/Observer.js",
 		"/home/vbachev/work/game_multiplayer/server.js",
+		"/home/vbachev/work/game_multiplayer/host/css/styles.css",
+		"/home/vbachev/work/game_multiplayer/host/js/app/core.js",
+		"/home/vbachev/work/game_multiplayer/Game modes",
+		"/home/vbachev/work/chetime/apps/era_books/.htaccess",
+		"/home/vbachev/work/game_multiplayer/host/js/app/arenaController.js",
+		"/home/vbachev/work/game_multiplayer/host/js/app/puppeteer.js",
+		"/home/vbachev/work/game_multiplayer/client/index.html",
+		"/home/vbachev/work/game_multiplayer/client/js/client.js",
+		"/home/vbachev/work/game_multiplayer/game_multiplayer.sublime-project",
 		"/home/vbachev/work/game_multiplayer/package.json",
 		"/home/vbachev/work/game_multiplayer/Procfile",
 		"/home/vasil/Downloads/netbeans-8.0.2-cpp-linux.sh",
@@ -381,19 +392,7 @@
 		"/home/vasil/work/cpp/hangman/CCommand.h",
 		"/media/vasil/Data/ownCloud/RADIO.m3u",
 		"/home/vasil/Downloads/cpp/CFig.cpp",
-		"/home/vasil/Downloads/cpp/CFig.h",
-		"/home/vasil/Downloads/cpp/CTriangle.h",
-		"/home/vasil/Downloads/cpp/CRect.h",
-		"/home/vasil/Downloads/cpp/CTriangle.cpp",
-		"/home/vasil/Downloads/cpp/CRect.cpp",
-		"/home/vasil/Downloads/cpp/Figures.cbp",
-		"/home/vasil/Downloads/cpp/fruits.txt",
-		"/home/vasil/Downloads/cpp/inherit.cpp",
-		"/home/vasil/work/cows_bulls/main.cpp",
-		"/home/vasil/.cache/.fr-NvPQ3W/pulse-linux-amd64-0.1.0/README.txt",
-		"/home/vasil/.cache/.fr-KMGSxL/pulse-linux-amd64-0.1.0/README.txt",
-		"/usr/share/applications/sublime.desktop",
-		"/usr/share/applications/defaults.list"
+		"/home/vasil/Downloads/cpp/CFig.h"
 	],
 	"find":
 	{
@@ -401,7 +400,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -412,6 +411,54 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"GameList",
+			"score",
+			"app/",
+			"app.",
+			"app",
+			"( ",
+			" )",
+			"stageConfig",
+			"data",
+			"app",
+			"data",
+			" )",
+			"( ",
+			"data",
+			"player",
+			"( ",
+			" )",
+			"roomId",
+			" )",
+			"( ",
+			"+",
+			"item",
+			"+",
+			"fps",
+			"<li class",
+			"444",
+			"000",
+			"li class",
+			"ata-comman",
+			"case",
+			"up",
+			"function",
+			"button",
+			"       ",
+			"        ",
+			"       ",
+			"Група",
+			"@в ",
+			"Група",
+			"console",
+			"score",
+			"lastscore",
+			"lasts",
+			"last",
+			"lastscore",
+			"score",
+			"item",
+			"view",
 			">",
 			"touchend",
 			"mouseup",
@@ -491,55 +538,7 @@
 			"this",
 			"moveAgent",
 			"pushed",
-			"acceleration",
-			"mass",
-			"grid",
-			"100",
-			",\n",
-			"();\n",
-			"});\n",
-			"* cellSize",
-			" * cellSize",
-			"* cellSize",
-			"cellSize",
-			" * cellSize",
-			"* cellSize",
-			"cellSize",
-			"grid",
-			"gridst",
-			"grid",
-			"    'use strict';\\n",
-			"qr",
-			"requirejs",
-			")s{",
-			"\\)\\n\\s+\\{",
-			"\n  ",
-			";\n",
-			"this",
-			"return",
-			";\n",
-			"this",
-			"ctrl+d",
-			"}\n",
-			";\n",
-			"};\n",
-			"\n  ",
-			";\n",
-			"this",
-			"};\n",
-			"\n    ",
-			" )\n  {\n",
-			")\n  {",
-			"\n    ",
-			" )\n  {\n",
-			")\n  {",
-			")\n{",
-			"randomize",
-			"console.warn(",
-			"Tools.log",
-			"Tools.isVector(",
-			"Tools.isNumber(",
-			"a_"
+			"acceleration"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -547,6 +546,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"(",
+			")",
+			"(",
+			")",
+			"(",
 			"",
 			"\\)\\s\\{"
 		],
@@ -559,28 +563,29 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "host/arena.html",
+					"file": "notes.md",
 					"settings":
 					{
-						"buffer_size": 613,
+						"buffer_size": 566,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								77,
-								78
+								226,
+								226
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
+							"auto_name": "socket communication server + host + client",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -631,7 +636,7 @@
 							"encoding_helper_confidence": 1.0,
 							"encoding_helper_encoding": "UTF-8",
 							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -643,18 +648,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/home/vbachev/work/chetime/apps/era_books/.htaccess",
+					"file": "host/js/main.js",
 					"settings":
 					{
-						"buffer_size": 3877,
+						"buffer_size": 984,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2683,
-								2683
+								611,
+								611
 							]
 						],
 						"settings":
@@ -710,30 +715,30 @@
 							"encoding_helper_confidence": 1.0,
 							"encoding_helper_encoding": "UTF-8",
 							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1173.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "host/js/arenaMain.js",
+					"file": "host/css/styles.css",
 					"settings":
 					{
-						"buffer_size": 2104,
+						"buffer_size": 2393,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1186,
-								1186
+								1414,
+								1414
 							]
 						],
 						"settings":
@@ -789,267 +794,30 @@
 							"encoding_helper_confidence": 1.0,
 							"encoding_helper_encoding": "UTF-8",
 							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 206.0,
+						"translation.y": 1689.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "host/js/app/arenaController.js",
+					"file": "host/js/game/main.js",
 					"settings":
 					{
-						"buffer_size": 8574,
+						"buffer_size": 1264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								59,
-								59
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "host/js/app/arenaView.js",
-					"settings":
-					{
-						"buffer_size": 3074,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1644,
-								1644
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 521.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "host/js/app/puppeteer.js",
-					"settings":
-					{
-						"buffer_size": 1305,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								72,
-								72
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"encoding_helper_confidence": 1.0,
-							"encoding_helper_encoding": "UTF-8",
-							"encoding_helper_encoding_sublime": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "client/js/client.js",
-					"settings":
-					{
-						"buffer_size": 1881,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								286,
-								286
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1164,6 +932,78 @@
 		"selected_items":
 		[
 			[
+				"main",
+				"host/js/game/main.js"
+			],
+			[
+				"gammain",
+				"host/js/game/main.js"
+			],
+			[
+				"arenacon",
+				"host/js/game/arena/controller.js"
+			],
+			[
+				"arenaview",
+				"host/js/game/arena/view.js"
+			],
+			[
+				"arenah",
+				"host/arena.html"
+			],
+			[
+				"snakeview",
+				"host/js/game/snake/view.js"
+			],
+			[
+				"arenacontro",
+				"host/js/game/arena/controller.js"
+			],
+			[
+				"arenamai",
+				"host/js/arenaMain.js"
+			],
+			[
+				"arenavi",
+				"host/js/app/arenaView.js"
+			],
+			[
+				"controll",
+				"host/js/app/controller.js"
+			],
+			[
+				"serv",
+				"server.js"
+			],
+			[
+				"core",
+				"host/js/app/core.js"
+			],
+			[
+				"loo",
+				"host/js/app/loop.js"
+			],
+			[
+				"vi",
+				"host/js/app/view.js"
+			],
+			[
+				"hostcss",
+				"host/css/styles.css"
+			],
+			[
+				"clienthtml",
+				"client/index.html"
+			],
+			[
+				"view",
+				"host/js/app/view.js"
+			],
+			[
+				"loop",
+				"host/js/app/loop.js"
+			],
+			[
 				"clientclient",
 				"client/js/client.js"
 			],
@@ -1174,10 +1014,6 @@
 			[
 				"puppe",
 				"host/js/app/puppeteer.js"
-			],
-			[
-				"arenavi",
-				"host/js/app/arenaView.js"
 			],
 			[
 				"arenacont",
@@ -1224,22 +1060,6 @@
 				"client/index.html"
 			],
 			[
-				"arenah",
-				"host/arena.html"
-			],
-			[
-				"main",
-				"host/js/main.js"
-			],
-			[
-				"view",
-				"host/js/app/view.js"
-			],
-			[
-				"controll",
-				"host/js/app/controller.js"
-			],
-			[
 				"arecs",
 				"host/css/arena.css"
 			],
@@ -1256,16 +1076,8 @@
 				"host/js/app/keyboard.js"
 			],
 			[
-				"hostcss",
-				"host/css/styles.css"
-			],
-			[
 				"arecss",
 				"host/css/arena.css"
-			],
-			[
-				"loop",
-				"host/js/app/loop.js"
 			],
 			[
 				"control",
@@ -1338,6 +1150,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 211.0,
 	"status_bar_visible": true
 }

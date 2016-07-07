@@ -1,9 +1,11 @@
-define(['game/arena/controller', 'game/arena/view'], function (Controller, View) {
+define(['games/snake/controller', 'games/snake/view'], function (Controller, View) {
+    
     var game = {
         stageConfig : {
-            stage : {
-                width : 600,
-                height : 600
+            grid : {
+                width : 20,
+                height : 20,
+                cellSize : 20
             }
         }
     };
@@ -24,9 +26,6 @@ define(['game/arena/controller', 'game/arena/view'], function (Controller, View)
             case 'left':
                 game.controller.addMove(event.data);
                 break;
-            case 'shake':
-                game.controller.addAction(event.data);
-                break;
         }
     });
 
@@ -38,10 +37,11 @@ define(['game/arena/controller', 'game/arena/view'], function (Controller, View)
         game.controller.removePlayer(event.data);
     });
 
-    app.on('loop', function (event) {
-        game.controller.play(event.data);
+    app.on('loop', function () {
+        game.controller.play();
         game.view.render(game.controller.getDTO());
     });
 
     return game;
+
 });
