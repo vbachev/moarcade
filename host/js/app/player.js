@@ -1,7 +1,8 @@
 define(function () {
 
     function getRandomColor () {
-        return 'hsl(' + (Math.floor(Math.random()*36)*10) + ',80%,40%)';
+        var n = 10; // number of unique colors
+        return 'hsl(' + (Math.floor(Math.random() * n) * 360 / n) + ',80%,40%)';
     }
 
     function Player (data) {

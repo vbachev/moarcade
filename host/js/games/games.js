@@ -7,16 +7,16 @@ define(function(){
 
     var games = [
         {
+            key : 'chase',
+            name : 'Planes'
+        },
+        {
             key : 'snake',
-            name : 'Snake Classic'
+            name : 'Snakes'
         },
         {
             key : 'arena',
-            name : 'Battle Arena'
-        },
-        {
-            key : 'chase',
-            name : 'Chase'
+            name : 'Arena'
         }
     ];
 

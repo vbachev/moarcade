@@ -1,23 +1,31 @@
 define(function(){
-    var interval;
+    var mainLoopCallback = function () {};
     var isPaused = false;
-    var delay = 1000 / 60; // 60fps
-    var lastTime;
+    var isStopped = true;
+    var lastTime = 0;
 
     function getTimeDelta () {
-        var newTime = new Date();
-        var dt = newTime - lastTime;
+        var newTime = Date.now();
+        var dt = (newTime - lastTime) / 1000;
         lastTime = newTime;
         return dt;
     }
 
+    function mainLoop () {
+        if(!isPaused){
+            mainLoopCallback(getTimeDelta());
+        }
+        if(!isStopped){
+            requestAnimationFrame(mainLoop);
+        }
+    }
+
     return {
         start : function( callback ){
-            interval = setInterval( function(){
-                if( !isPaused ){
-                    callback( getTimeDelta() );
-                }
-            }, delay );
+            isStopped = false;
+            isPaused = false;
+            mainLoopCallback = callback || mainLoopCallback;
+            requestAnimationFrame(mainLoop);
         },
 
         pause : function(){
@@ -29,7 +37,7 @@ define(function(){
         },
 
         stop : function(){
-            clearInterval( interval );
+            isStopped = true;
         }
     };
 });

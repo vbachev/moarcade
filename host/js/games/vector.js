@@ -101,5 +101,15 @@ define(function(){
     return this;
   };
 
+  Vector.prototype.angle = function ( a_vector ) {
+    var x = this.x;
+    var y = this.y;
+    if( a_vector ){
+      x -= a_vector.x;
+      y -= a_vector.y;
+    }
+    return Math.atan2(y, x);
+  }
+
   return Vector;
 });

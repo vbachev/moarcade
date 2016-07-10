@@ -26,7 +26,7 @@ require([ 'jquery', 'app/host', 'app/loop', 'app/dashboard', 'app/mock', 'games/
         Dashboard.setURL(event.data);
         GamesManager.initialize();
         
-        new Mock();
+        // new Mock();
     });
 
     app.on('game_started', function (event) {

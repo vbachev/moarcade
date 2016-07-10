@@ -2,10 +2,11 @@ define([ 'app/keyboard', 'app/player' ], function ( Keyboard, Player ) {
     
     function MockPlayer () {
 
-        var mockPlayers = [42, 43]; 
+        var mockPlayers = [42, 43, 44];//, 45, 46, 47]; 
+        var shootInterval = 2000;
         
         // create mock players and join them to the game
-        for(i in mockPlayers){
+        for(var i in mockPlayers){
             var newPlayer = new Player({
                 id : mockPlayers[i],
                 name : 'mock #' + mockPlayers[i]
@@ -28,12 +29,26 @@ define([ 'app/keyboard', 'app/player' ], function ( Keyboard, Player ) {
                 commandId = mockPlayers[1];
                 keyName = p1Keys[ p2Keys.indexOf( keyName )];
             }
+            else if( keyName == 'space' ){
+                commandId = mockPlayers[0];
+                keyName = 'action';
+                return;
+            }
 
             app.trigger('command', {
                 message : keyName,
                 id : commandId
             });
         });
+
+        setInterval(function(){
+            for(var i in mockPlayers){
+                app.trigger('command', {
+                    message : 'action',
+                    id : mockPlayers[i]
+                });
+            }
+        }, shootInterval);
     }
 
     return MockPlayer;
