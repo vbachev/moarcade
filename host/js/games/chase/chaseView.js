@@ -67,7 +67,7 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
                 y : 0,
                 w : 33,
                 h : 33,
-                speed : 5 / settings.rocket.duration,
+                speed : 5 / settings.rocket.duration / 60,
                 frames : [0, 1, 2, 3, 4, 5],
                 size : [
                     settings.explosion.size,
@@ -80,7 +80,7 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
                 y : 0,
                 w : 65,
                 h : 65,
-                speed : 6 / settings.debris.duration,
+                speed : 6 / settings.debris.duration / 60,
                 frames : [0, 1, 2, 3, 4, 5, 6],
                 size : [
                     settings.debris.size,
@@ -95,7 +95,7 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
             player : function (agent) {
                 if(!agent.sprite){
                     // random plane sprite
-                    var key = 'plane' + Math.floor(Math.random()*4);
+                    var key = 'plane' + agent.spriteType;
                     agent.sprite = new Sprite(templates[key]);
                 }
 
@@ -105,16 +105,35 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
                 // shadow
                 context.beginPath();
                 context.arc(
-                    shadow[0], shadow[1], 
+                    // shadow[0], shadow[1],
+                    // 0,0, 
+                    agent.heading.x * 5, agent.heading.y * 5,
                     settings.player.size / 3, 
                     0, 2 * Math.PI, false);
-                context.fillStyle = 'black';
-                context.strokeStyle = agent.parent.color;
-                context.lineWidth = 2;
+
+                context.strokeStyle = 'black';
+                // context.strokeStyle = agent.parent.color;
+                // context.setLineDash([4, 4]);
+                context.lineWidth = 1;
+                // context.globalAlpha = 0.8;
+                context.stroke();
+                
+                context.fillStyle = agent.parent.color;
                 context.globalAlpha = 0.5;
                 context.fill();
-                context.stroke();
+
                 context.globalAlpha = 1;
+
+                // heading
+                // context.beginPath();
+                // context.arc(
+                //     agent.heading.x * 30, agent.heading.y * 30, 
+                //     settings.player.size / 10, 
+                //     0, 2 * Math.PI, false);
+                // context.fillStyle = 'red';
+                // context.globalAlpha = 0.7;
+                // context.fill();
+                // context.globalAlpha = 1;
                 
                 // plane
                 context.rotate(agent.velocity.angle());

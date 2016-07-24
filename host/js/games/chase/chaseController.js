@@ -45,16 +45,17 @@ define(['games/vector'], function (Vector) {
                     newAgent.weaponLoaded = true;
                     newAgent.heading = getRandomDirection();
                     newAgent.position = getRandomPosition();
+                    newAgent.spriteType = Math.floor(Math.random()*4);
                     break;
 
                 case 'rocket':
                     // use the midpoint between velocity and heading
                     newAgent.velocity = parentObj.heading.clone();
                     newAgent.velocity.add(parentObj.velocity);
+                    newAgent.velocity.normalize().mult(settings.rocket.startSpeed);
 
                     // must appear in front of the plane
                     newAgent.position = parentObj.position.clone();
-                    newAgent.position.add(newAgent.velocity);
                     
                     newAgent.duration = settings.rocket.duration;
                     newAgent.acceleration = newAgent.velocity.limit(settings.rocket.acceleration);
@@ -65,8 +66,8 @@ define(['games/vector'], function (Vector) {
                     newAgent.position = parentObj.position.clone();
                     newAgent.velocity = parentObj.velocity.clone();
                     newAgent.acceleration = parentObj.velocity.clone();
-                    newAgent.acceleration.limit(settings.debris.friction);
-                    newAgent.acceleration.mirror();
+                    newAgent.acceleration.normalize().mirror();
+                    newAgent.acceleration.mult(settings.debris.friction);
                     break;
 
                 case 'explosion':
@@ -181,8 +182,8 @@ define(['games/vector'], function (Vector) {
                     if(settings[a.type].maxSpeed){
                         a.velocity.limit(settings[a.type].maxSpeed);
                     }
-                    a.position.add(a.velocity);
-                    a.duration--;
+                    a.position.add(a.velocity.clone().mult(dt));
+                    a.duration -= dt;
                     if(a.duration < 0){
                         delete agents[a.id];
                     }
@@ -203,18 +204,20 @@ define(['games/vector'], function (Vector) {
                     }
                     dodge.normalize();
                     dodge.mult(Math.tan(Math.PI / 180 * Math.abs(a.steerAngle)));
-                    a.heading.add(dodge);
+                    a.heading.add(dodge.mult(dt * 10));
                     a.heading.normalize();
                     
                     a.steerAngle = 0;
                 }
 
-                var desiredVelocity = a.heading.clone();
-                desiredVelocity.normalize();
-                desiredVelocity.mult(settings.player.maxSpeed);
-                var steerForce = desiredVelocity.sub(a.velocity);
+                var steerForce = a.heading.clone();
+                steerForce.mult(settings.player.maxSpeed);
+                steerForce.sub(a.velocity);
                 steerForce.limit(settings.player.cornering);
-                a.acceleration.add(steerForce);
+
+                a.velocity.add(steerForce);
+                a.velocity.limit(settings.player.maxSpeed);
+                a.position.add(a.velocity.clone().mult(dt));
 
                 if(a.shoot && a.weaponLoaded){    
                     createAgent('rocket', a);
@@ -225,17 +228,18 @@ define(['games/vector'], function (Vector) {
                     }).bind(this, a), settings.player.reloadTime);
                 }
                 a.shoot = false;
-
-                a.velocity.add(a.acceleration);
-                a.velocity.limit(settings.player.maxSpeed);
-                a.position.add(a.velocity);
-                a.acceleration.mult(0);
             }
         }
 
         function seekTarget (a) {
             var closestTarget;
             var minDistance;
+            
+            // do not seek targets if the rocket's idle time has not passed
+            if(settings.rocket.duration - a.duration < settings.rocket.idleTime){
+                return;
+            }
+
             for(id in agents){
                 var target = agents[id];
                 if(target.type != 'player' || target.id == a.parent.id){

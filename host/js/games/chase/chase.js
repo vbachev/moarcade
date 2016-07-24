@@ -2,29 +2,31 @@ define(['games/chase/chaseController', 'games/chase/chaseView'], function (Chase
     var game = {
         settings : {
             player : {
-                maxSpeed : 3,
-                steeringStep : 20,
-                cornering : 0.05,
-                respawnTime : 2000,
-                reloadTime : 1500,
-                size: 40
+                maxSpeed : 150, // in px/s
+                steeringStep : 20, // in deg
+                cornering : 8, // in px/s^2?
+                respawnTime : 2000, // in ms
+                reloadTime : 1000, // in ms
+                size: 40 // in px
             },
             debris : {
-                duration : 100,
-                friction : 0.03,
-                size: 65
+                duration : 1, // in s
+                friction : 2, // in px/s^2?
+                size: 65 // in px
             },
             rocket : {
-                maxSpeed : 6,
-                duration : 100,
-                acceleration : .5,
-                seekRange : 100,
-                cornering : 0.1,
-                size : 10
+                startSpeed : 200, // in px/s
+                maxSpeed : 400, // in px/s
+                duration : 2, // in s
+                idleTime : 0.5, // in s
+                acceleration : 5, // in px/s^2?
+                seekRange : 200, // in px
+                cornering : 7, // in px/s^2?
+                size : 10 // in px
             },
             explosion : {
-                duration : 50,
-                size : 33
+                duration : 1, // in s
+                size : 33 // in px
             }
         }
     };

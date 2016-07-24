@@ -2,8 +2,8 @@ define([ 'app/keyboard', 'app/player' ], function ( Keyboard, Player ) {
     
     function MockPlayer () {
 
-        var mockPlayers = [42, 43, 44];//, 45, 46, 47]; 
-        var shootInterval = 2000;
+        var mockPlayers = [42, 43, 44, 45, 46, 47, 48, 49, 50, 51]; 
+        var shootInterval = 5000;
         
         // create mock players and join them to the game
         for(var i in mockPlayers){

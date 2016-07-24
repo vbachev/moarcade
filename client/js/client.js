@@ -76,7 +76,7 @@ function bindEventHandlers () {
         
         setInterval(function () {
             emit('tilt', tiltData);
-        }, emitPeriod);
+        }, 30);
     }
 }
 

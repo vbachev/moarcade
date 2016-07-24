@@ -1,37 +1,31 @@
 define([], function () {
 
     var resourceCache = {};
-    var loading = [];
     var readyCallbacks = [];
 
     // Load an image url or an array of image urls
-    function load(urlOrArr) {
-        if(urlOrArr instanceof Array) {
-            urlOrArr.forEach(function(url) {
-                _load(url);
-            });
-        }
-        else {
-            _load(urlOrArr);
-        }
+    function load (urlOrArr) {
+        var urls = Array.prototype.slice.call(arguments);
+        urls.forEach(function (url) {
+            _load(url);
+        });
     }
 
-    function _load(url) {
-        if(resourceCache[url]) {
-            return resourceCache[url];
+    function _load (url) {
+        if(typeof resourceCache[url] != 'undefined') {
+            return;
         }
-        else {
-            var img = new Image();
-            img.onload = function() {
-                resourceCache[url] = img;
-                
-                if(isReady()) {
-                    readyCallbacks.forEach(function(func) { func(); });
-                }
-            };
-            resourceCache[url] = false;
-            img.src = url;
-        }
+
+        var img = new Image();
+        img.onload = function() {
+            resourceCache[url] = img;
+            
+            if(isReady()) {
+                readyCallbacks.forEach(function(func) { func(); });
+            }
+        };
+        resourceCache[url] = false;
+        img.src = url;
     }
 
     function get(url) {
@@ -44,6 +38,7 @@ define([], function () {
             if(resourceCache.hasOwnProperty(k) &&
                !resourceCache[k]) {
                 ready = false;
+                continue;
             }
         }
         return ready;

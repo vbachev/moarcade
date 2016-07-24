@@ -101,6 +101,7 @@ define(function(){
     return this;
   };
 
+  // return angle from axis in radians
   Vector.prototype.angle = function ( a_vector ) {
     var x = this.x;
     var y = this.y;

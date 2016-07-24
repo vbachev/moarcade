@@ -1,30 +1,43 @@
-socket communication server + host + client
-    registering and joining of players
-    abstract command events
-    dispatching commands from/to hosts and players
+@TODO:
 
-basic game host interface
-    title and info
-    join link + qr
-    players list + score
-    console/log
-    responds to connections, messages and scoring
+- optimizations
+    x dt based movements
+    - reduce loops
 
-basic game player interface
+- gold-plating
+    - classes, factories, patterns
+    - framework for host/dashboard
+        - backbone + require + underscore
+        - angular
+        - meteor / react
+    - canvas/gaming framework
+    - front-end redesign
+    - sprites/graphics redesign
+    - domain
 
-homepage leading to different games
+- features
+    - computer enemies AI
+        - enemy planes (slower maneuvering, long-range seek behavior)
+        - zepelin (slow, hard-to-kill, long-range cannons in all directions)
+        - drone (quick, agile, hovers, near-field seek behavior, slower than planes)
+    - obstacles, destroyables
+        - hot air baloon
+        - meteor?!
+        - flting castle?!
+    - easier way to join a game
+        - join by code
+    - weapons/power-ups
+    - randomized stats/weapons
+    - fullscreen on host and player UI
+    - homepage while 1st player joins
+    - keyboard player on host
 
-
-open hostname
-    want to join or host
-        join
-            enter password
-            start
-        host
-            choose game
-            start
-
-events
-namespace
-host
-loop
+- games
+    - planes
+        - recognizable players
+        - skew-able sprites when turning
+    - snake playability
+    - arena graphics
+    - tanks
+    - cannons
+    - tron
