@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Arcade 2.0</title>
+		<title>MOArcade player controller</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
 
@@ -10,16 +10,22 @@
 	</head>
 	<body class="waiting">
 		<div class="login">
+			<h2>MOArcade - play mobile multiplayer games</h2>
 			<label for="name">What is your name?</label>
 			<input id="name" type="text" name="name" class="name">
 			<input id="joinButton" type="button" class="submit" name="submit" value="Join">
+		</div>
+
+		<div class="limbo">
+			<h2>You have joined!</h2>
+			<p>Waiting for a game to start ...</p>
 		</div>
 
 		<div class="keys">
 			<div id="upButton" class="button up" data-commandname="up">UP</div>
 			<br>
 			<div id="leftButton" class="button left" data-commandname="left">LEFT</div>
-			<div id="actionButton" class="button action" data-commandname="action">HIT</div>
+			<div id="actionButton" class="button action" data-commandname="action">SHOOT</div>
 			<div id="rightButton" class="button right" data-commandname="right">RIGHT</div>
 			<br>
 			<div id="downButton" class="button down" data-commandname="down">DOWN</div>

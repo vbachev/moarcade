@@ -24,6 +24,8 @@ function bindEventHandlers () {
         $(document.body).addClass('joined');
 
         $('.login').remove(); // well ... that escalated quickly!
+        
+        toggleFullScreen(document.documentElement);
     });
 
     $('.keys .button').on(interactionEvent, function (e) {
@@ -46,32 +48,26 @@ function bindEventHandlers () {
 
     if(window.DeviceOrientationEvent){
         window.addEventListener('deviceorientation', function(eventData) {
+            var lr = Math.round(eventData.gamma);
+            var fb = Math.round(eventData.beta);
+
+            // skip wierd blank glitches
+            if(lr == 0 && fb == 0){
+                return;
+            }
+
             // gamma is the left-to-right tilt in degrees, where right is positive
-            tiltData.lr = Math.round(eventData.gamma);
+            tiltData.lr = lr;
             // beta is the front-to-back tilt in degrees, where front is positive
-            tiltData.fb = Math.round(eventData.beta);
+            tiltData.fb = fb;
             // alpha is the compass direction the device is facing in degrees
             // tiltData.dir = Math.round(eventData.alpha);
 
+            // normalization of tilt
             var roll = tiltData.fb;
             roll *= tiltData.lr < 0 ? -1 : 1;
             roll = roll > 90 ? 90 : roll < -90 ? -90 : roll;
             tiltData.roll = roll;
-
-            // if(Math.abs(tiltData.fb) > Math.abs(tiltData.lr)){
-            //     if(tiltData.fb > 0){
-            //         tiltData.orientation = 0;
-            //     } else {
-            //         tiltData.orientation = 2;
-            //     }
-            // } else {
-            //     if(tiltData.lr > 0){
-            //         tiltData.orientation = 3;
-            //     } else {
-            //         tiltData.orientation = 1;
-            //     }
-            // }
-
         }, false);
         
         setInterval(function () {
@@ -80,10 +76,12 @@ function bindEventHandlers () {
     }
 }
 
+// emit an event once
 function emit (commandName, data) {
     connection.emit('command', commandName, data);
 }
 
+// emit once and set an interval to periodically emit an event
 function startEmitting (eventName) {
     emit(eventName);
     stopEmitting(eventName);
@@ -92,8 +90,26 @@ function startEmitting (eventName) {
     }, emitPeriod);
 }
 
+// stop periodic emitting
 function stopEmitting (eventName) {
     clearInterval(emitIntervals[ eventName ]);
+}
+
+// HTML5 FullScreen API
+function toggleFullScreen (targetElement) {
+    if (!document.mozFullScreen && !document.webkitFullScreen) {
+        if (targetElement.mozRequestFullScreen) {
+            targetElement.mozRequestFullScreen();
+        } else {
+            targetElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+    } else {
+        if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else {
+            document.webkitCancelFullScreen();
+        }
+    }
 }
 
 $(function(){

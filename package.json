@@ -1,9 +1,21 @@
 {
-  "name": "socket-chat-example",
-  "version": "0.0.1",
-  "description": "my first socket.io app",
-  "dependencies": {
-    "express": "^4.10.7",
-    "socket.io": "^1.2.1"
-  }
+    "name": "moarcade",
+    "description": "Multiplayer Online Arcade game based on socket.io",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node moarcade.js"
+    },
+    "author": {
+        "name": "Vasil Bachev",
+        "email": "vasil@vasilbachev.com",
+        "url": "http://vasilbachev.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git"
+    },
+    "dependencies": {
+        "express": "4.x",
+        "socket.io": "1.x"
+    }
 }

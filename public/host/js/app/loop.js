@@ -4,16 +4,11 @@ define(function(){
     var isStopped = true;
     var lastTime = 0;
 
-    function getTimeDelta (rafTime) {
-        // var newTime = Date.now();
-        // var dt = (newTime - lastTime) / 1000;
-        // lastTime = newTime;
-        
+    function getTimeDelta (rafTime) {        
         var dt = rafTime - lastTime;
         dt = Math.round(dt) / 1000; // return in s rather than ms
         lastTime = rafTime;
 
-        // console.log('time delta', dt);
         return dt;
     }
 

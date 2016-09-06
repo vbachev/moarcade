@@ -1,6 +1,6 @@
 define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
 
-    function ChaseView (config) {
+    function PlanesView (config) {
         var settings = $.extend(true, {}, config);
         var context;
         var shadow = [1, 3];
@@ -89,36 +89,36 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
             }
         };
 
-        // rendering for each type of agent
+        // rendering for each type of actor
         var renderHandlers = {
             
-            player : function (agent) {
-                if(!agent.sprite){
+            player : function (actor) {
+                if(!actor.sprite){
                     // random plane sprite
-                    var key = 'plane' + agent.spriteType;
-                    agent.sprite = new Sprite(templates[key]);
+                    var key = 'plane' + actor.spriteType;
+                    actor.sprite = new Sprite(templates[key]);
                 }
 
                 context.save();
-                context.translate(agent.position.x, agent.position.y);
+                context.translate(actor.position.x, actor.position.y);
 
                 // shadow
                 context.beginPath();
                 context.arc(
                     // shadow[0], shadow[1],
                     // 0,0, 
-                    agent.heading.x * 5, agent.heading.y * 5,
+                    actor.heading.x * 5, actor.heading.y * 5,
                     settings.player.size / 3, 
                     0, 2 * Math.PI, false);
 
                 context.strokeStyle = 'black';
-                // context.strokeStyle = agent.parent.color;
+                // context.strokeStyle = actor.parent.color;
                 // context.setLineDash([4, 4]);
                 context.lineWidth = 1;
                 // context.globalAlpha = 0.8;
                 context.stroke();
                 
-                context.fillStyle = agent.parent.color;
+                context.fillStyle = actor.parent.color;
                 context.globalAlpha = 0.5;
                 context.fill();
 
@@ -127,52 +127,79 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
                 // heading
                 // context.beginPath();
                 // context.arc(
-                //     agent.heading.x * 30, agent.heading.y * 30, 
+                //     actor.heading.x * 30, actor.heading.y * 30, 
                 //     settings.player.size / 10, 
                 //     0, 2 * Math.PI, false);
-                // context.fillStyle = 'red';
+                // context.fillStyle = actor.parent.color;
                 // context.globalAlpha = 0.7;
                 // context.fill();
                 // context.globalAlpha = 1;
                 
                 // plane
-                context.rotate(agent.velocity.angle());
-                agent.sprite.render(context);
+                context.rotate(actor.velocity.angle());
+                actor.sprite.render(context);
 
                 context.restore();
             },
 
-            debris : function (agent) {
-                if(!agent.sprite){
-                    agent.sprite = new Sprite(templates[agent.type]);
+            debris : function (actor) {
+                if(!actor.sprite){
+                    actor.sprite = new Sprite(templates[actor.type]);
                 }
                 
                 context.save();
-                context.translate(agent.position.x, agent.position.y);
-                agent.sprite.render(context);
+                context.translate(actor.position.x, actor.position.y);
+                actor.sprite.render(context);
                 context.restore();
             },
 
-            rocket : function (agent) {
-                if(!agent.sprite){
-                    agent.sprite = new Sprite(templates.rocket);
+            bullet : function (actor) {
+                context.save();
+                context.translate(actor.position.x, actor.position.y);
+                context.rotate(actor.velocity.angle());
+
+                context.beginPath();
+                context.arc(
+                    0,0, 
+                    settings.bullet.size, 
+                    0, 2 * Math.PI, false);
+
+                context.strokeStyle = 'black';
+                // context.strokeStyle = actor.parent.color;
+                // context.setLineDash([4, 4]);
+                context.lineWidth = 1;
+                // context.globalAlpha = 0.8;
+                context.stroke();
+                
+                context.fillStyle = actor.parent.parent.color;
+                // context.globalAlpha = 0.5;
+                context.fill();
+
+                // context.globalAlpha = 1;
+
+                context.restore();  
+            },
+
+            rocket : function (actor) {
+                if(!actor.sprite){
+                    actor.sprite = new Sprite(templates.rocket);
                 }
 
                 context.save();
-                context.translate(agent.position.x, agent.position.y);
-                context.rotate(agent.velocity.angle());
-                agent.sprite.render(context);
+                context.translate(actor.position.x, actor.position.y);
+                context.rotate(actor.velocity.angle());
+                actor.sprite.render(context);
                 context.restore();
             },
 
-            explosion : function (agent) {
-                if(!agent.sprite){
-                    agent.sprite = new Sprite(templates[agent.type]);
+            explosion : function (actor) {
+                if(!actor.sprite){
+                    actor.sprite = new Sprite(templates[actor.type]);
                 }
                 
                 context.save();
-                context.translate(agent.position.x, agent.position.y);
-                agent.sprite.render(context);
+                context.translate(actor.position.x, actor.position.y);
+                actor.sprite.render(context);
                 context.restore();
             }
         };
@@ -217,12 +244,13 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
                 'debris',
                 'explosion',
                 'rocket',
+                'bullet',
                 'player'
             ];
             for(var i = 0; i < renderOrder.length; i++){
-                var agents = data.viewModel.agents[renderOrder[i]];
-                for(var id in agents){
-                    var a = agents[id];
+                var actors = data.viewModel.actors[renderOrder[i]];
+                for(var id in actors){
+                    var a = actors[id];
                     renderHandlers[a.type](a);
                 }
             }
@@ -238,5 +266,5 @@ define(['games/resource', 'games/sprite'], function (Resource, Sprite) {
         };   
     }
 
-    return ChaseView;
+    return PlanesView;
 });

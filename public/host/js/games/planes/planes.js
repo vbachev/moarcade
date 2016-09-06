@@ -1,4 +1,4 @@
-define(['games/chase/chaseController', 'games/chase/chaseView'], function (ChaseController, ChaseView) {
+define(['games/planes/planesController', 'games/planes/planesView'], function (PlanesController, PlanesView) {
     var game = {
         settings : {
             player : {
@@ -14,12 +14,17 @@ define(['games/chase/chaseController', 'games/chase/chaseView'], function (Chase
                 friction : 2, // in px/s^2?
                 size: 65 // in px
             },
+            bullet : {
+                startSpeed : 600, // in px/s
+                duration : 1, // in s
+                size : 2 // in px
+            },
             rocket : {
                 startSpeed : 200, // in px/s
                 maxSpeed : 400, // in px/s
                 duration : 2, // in s
                 idleTime : 0.5, // in s
-                acceleration : 5, // in px/s^2?
+                thrust : 5, // in px/s^2?
                 seekRange : 200, // in px
                 cornering : 7, // in px/s^2?
                 size : 10 // in px
@@ -57,9 +62,9 @@ define(['games/chase/chaseController', 'games/chase/chaseView'], function (Chase
         });
     }
 
-    game.view = new ChaseView(game.settings);
+    game.view = new PlanesView(game.settings);
     game.settings.view = game.view.getDimensions();
-    game.controller = new ChaseController(game.settings);
+    game.controller = new PlanesController(game.settings);
 
     // start when the view is fully loaded
     game.view.onReady(start);

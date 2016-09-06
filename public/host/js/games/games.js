@@ -1,4 +1,4 @@
-define(function(){
+define(['app/dashboard'], function (Dashboard) {
 
     var templates = {
         gamesList : '<h2 class="games-title">Choose what to play:</h2><ul class="games-list"/>',
@@ -7,7 +7,7 @@ define(function(){
 
     var games = [
         {
-            key : 'chase',
+            key : 'planes',
             name : 'Planes'
         },
         {
@@ -43,12 +43,15 @@ define(function(){
         initialize : function () {
             var gameboard = $('.gameboard');
             gameboard.append(templates.gamesList);
+            
             var list = gameboard.find('.games-list');
             for(var i = 0; i < games.length; i++){
                 list.append(template('listItem', games[i]));
             }
+
             list.on('click', 'li', function(){
                 loadGame($(this).data('key'));
+                Dashboard.toggleFullScreen();
             });
         }
     }
