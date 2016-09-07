@@ -1,21 +1,21 @@
 {
-    "name": "moarcade",
-    "description": "Multiplayer Online Arcade game based on socket.io",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "node moarcade.js"
-    },
-    "author": {
-        "name": "Vasil Bachev",
-        "email": "vasil@vasilbachev.com",
-        "url": "http://vasilbachev.com"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git"
-    },
-    "dependencies": {
-        "express": "4.x",
-        "socket.io": "1.x"
-    }
+  "name": "moarcade",
+  "description": "Multiplayer Online Arcade game based on socket.io",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node moarcade.js"
+  },
+  "author": {
+    "name": "Vasil Bachev",
+    "email": "vasil@vasilbachev.com",
+    "url": "http://vasilbachev.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "express": "4.x",
+    "socket.io": "1.x"
+  }
 }
