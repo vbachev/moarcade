@@ -45,10 +45,10 @@ body {
     color: #000;
 }
 
-.game-chase .button.up,
-.game-chase .button.right,
-.game-chase .button.down,
-.game-chase .button.left,
+.game-planes .button.up,
+.game-planes .button.right,
+.game-planes .button.down,
+.game-planes .button.left,
 .game-snake .button.action {
     display: none;
 }
@@ -58,7 +58,7 @@ body {
     color: rgba(255,255,255,.8);
 }
 
-.game-chase .button.action {
+.game-planes .button.action {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -78,7 +78,7 @@ body {
         0 2px 0px 3px rgba(0,0,0,.5);
 }
 
-.game-chase .button.action:active {
+.game-planes .button.action:active {
     margin-top: -98px;
 }
 
